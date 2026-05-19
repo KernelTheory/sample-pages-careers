@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IIHS Candidate Flow - Design Set 1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      :root{--brand:#881803;--brand2:#de5a2a;--soft:#fef7f3;--ink:#0f172a;--text:#334155;--muted:#64748b;--line:#e2e8f0;--bg:#f8fafc;--card:#fff;--green:#047857;--amber:#b45309;--red:#b91c1c;--blue:#1d4ed8}
+      *{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#fff 0%,var(--bg) 42%,#fff 100%);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:0}a{text-decoration:none;color:inherit}.wrap{max-width:1360px;min-width:1180px;margin:0 auto;padding:24px 28px}.top{display:flex;justify-content:space-between;align-items:center;border:1px solid var(--line);background:#fffffff0;border-radius:12px;padding:14px 16px;box-shadow:0 18px 55px #0f172a12;position:sticky;top:16px;z-index:5}.brand{display:flex;align-items:center;gap:12px}.mark{display:grid;place-items:center;width:42px;height:42px;border-radius:10px;background:var(--brand);color:white;font-weight:900;font-size:12px}.brand strong{display:block}.brand span{display:block;color:var(--muted);font-size:12px;margin-top:2px}.nav{display:flex;gap:8px}.nav a,.pill{display:inline-flex;align-items:center;justify-content:center;height:34px;border-radius:999px;border:1px solid var(--line);background:white;padding:0 12px;font-size:12px;font-weight:800;color:var(--text)}.nav a.active,.pill.hot{background:var(--soft);border-color:#fbd5bf;color:var(--brand)}
+      .hero{display:grid;grid-template-columns:1fr 360px;gap:22px;align-items:end;padding:42px 0 26px}.eyebrow{color:var(--brand);font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.08em}h1{font-size:48px;line-height:1.02;margin:12px 0 0;max-width:850px}.hero p{font-size:16px;line-height:1.65;color:var(--text);max-width:780px}.summary{border:1px solid var(--line);border-radius:10px;background:white;padding:18px;box-shadow:0 18px 55px #0f172a12}.summary h2{font-size:18px;margin:0 0 12px}.summary div{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding:10px 0;color:var(--muted);font-size:13px}.summary div:last-child{border:0}.summary strong{color:var(--ink)}
+      .flow{display:grid;grid-template-columns:240px 1fr;gap:18px;align-items:start}.rail{position:sticky;top:104px;border:1px solid var(--line);border-radius:10px;background:white;padding:12px;box-shadow:0 12px 40px #0f172a0d}.rail a{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:center;padding:10px;border-radius:8px;color:var(--text);font-size:13px;font-weight:800}.rail a.active{background:var(--soft);color:var(--brand)}.num{display:grid;place-items:center;width:28px;height:28px;border-radius:8px;background:#f1f5f9;color:var(--muted);font-size:12px}.active .num,.section-num{background:var(--brand);color:white}
+      .sections{display:grid;gap:18px}.section{border:1px solid var(--line);border-radius:12px;background:white;box-shadow:0 18px 55px #0f172a0d;overflow:hidden}.section-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;padding:20px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#fff,var(--soft))}.section-title{display:flex;gap:12px;align-items:flex-start}.section-num{display:grid;place-items:center;flex:0 0 auto;width:34px;height:34px;border-radius:10px;font-weight:900}.section h2{margin:0;font-size:22px}.section-head p{margin:6px 0 0;color:var(--muted);font-size:13px;line-height:1.45}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:38px;border-radius:9px;border:1px solid transparent;padding:0 13px;font-size:13px;font-weight:900}.primary{background:var(--brand);color:white}.secondary{background:white;border-color:var(--line);color:var(--text)}.ghost{background:var(--soft);border-color:#fbd5bf;color:var(--brand)}
+      .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:18px}.job{border:1px solid var(--line);border-radius:10px;background:white;padding:16px;min-height:230px;display:flex;flex-direction:column}.job.primary-job{border-color:#f7b896;background:linear-gradient(180deg,#fff,var(--soft));box-shadow:inset 4px 0 0 var(--brand)}.tags{display:flex;flex-wrap:wrap;gap:6px}.tag{display:inline-flex;align-items:center;min-height:24px;border:1px solid var(--line);border-radius:999px;background:#f8fafc;color:var(--muted);padding:0 8px;font-size:11px;font-weight:800}.job h3{font-size:17px;line-height:1.3;margin:12px 0 0}.job p{color:var(--text);font-size:13px;line-height:1.55}.job-foot{display:flex;justify-content:space-between;align-items:center;margin-top:auto}.deadline{color:var(--amber);font-size:12px;font-weight:900}
+      .detail{display:grid;grid-template-columns:1.35fr .75fr;gap:16px;padding:18px}.detail-card,.side-card{border:1px solid var(--line);border-radius:10px;background:white;padding:18px}.detail-card h3{font-size:26px;margin:0;color:var(--brand)}.detail-card p,.detail-card li{color:var(--text);line-height:1.6;font-size:14px}.detail-card ul{display:grid;gap:8px;margin:14px 0 0;padding-left:20px}.side-card h4{margin:0 0 12px;font-size:15px}.side-card div{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:10px 0;color:var(--muted);font-size:13px}.side-card div:last-child{border:0}.side-card strong{color:var(--ink);text-align:right}
+      .rank-list{display:grid;gap:10px;padding:18px}.rank-row{display:grid;grid-template-columns:50px 1fr 132px;gap:12px;align-items:center;border:1px solid var(--line);border-radius:10px;background:white;padding:12px}.rank{display:grid;place-items:center;width:38px;height:38px;border-radius:10px;background:var(--brand);color:white;font-size:16px;font-weight:950}.rank-row:nth-child(2) .rank{background:#a0461f}.rank-row:nth-child(3) .rank{background:var(--brand2)}.rank-row h3{margin:0;font-size:15px}.rank-row p{margin:4px 0 0;color:var(--muted);font-size:12px}.lock{margin:0 18px 18px;border:1px solid #fed7aa;border-radius:9px;background:#fff7ed;color:#9a3412;padding:11px;font-size:13px;font-weight:800}
+      .upload-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:18px}.drop{display:grid;place-items:center;min-height:230px;border:2px dashed #cbd5e1;border-radius:10px;background:#f8fafc;text-align:center;padding:22px}.drop b{display:block;font-size:20px}.drop span{display:block;margin-top:8px;color:var(--muted);font-size:13px}.review{display:grid;gap:10px}.flag{display:flex;justify-content:space-between;gap:12px;border:1px solid #fde68a;background:#fffbeb;color:#78350f;border-radius:9px;padding:13px;font-size:13px}.steps{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;padding:18px}.step{border:1px solid var(--line);border-radius:9px;background:white;min-height:96px;padding:12px}.step.active{background:var(--soft);border-color:#fbd5bf}.step b{display:grid;place-items:center;width:28px;height:28px;border-radius:8px;background:#f1f5f9;color:var(--muted);font-size:12px}.step.active b{background:var(--brand);color:white}.step h3{margin:10px 0 4px;font-size:13px}.step p{margin:0;color:var(--muted);font-size:11px;line-height:1.4}.status{display:flex;gap:8px;padding:0 18px 18px}.chip{border-radius:999px;padding:7px 10px;font-size:11px;font-weight:900}.registered{background:#eef2ff;color:#3730a3}.progress{background:#eff6ff;color:#1d4ed8}.submitted{background:#ecfdf5;color:#047857}.shortlisted{background:#fef3c7;color:#92400e}.rejected{background:#fef2f2;color:#b91c1c}.toast{position:fixed;right:24px;bottom:24px;width:330px;border:1px solid #bbf7d0;background:#f0fdf4;color:#14532d;border-radius:10px;box-shadow:0 18px 55px #0f172a2a;padding:14px}.toast strong{display:block;font-size:13px}.toast span{font-size:12px}
+      /* Lighter modern treatment for cleaner stakeholder review */
+      body{background:linear-gradient(180deg,#ffffff 0%,#fafbfc 48%,#ffffff 100%)}
+      .top,.summary,.rail,.section{box-shadow:0 10px 30px rgba(15,23,42,.06)}
+      h1{font-size:44px;font-weight:650;letter-spacing:0}
+      .section h2{font-weight:650}
+      .detail-card h3{font-size:24px;font-weight:650}
+      .job h3,.rank-row h3,.step h3{font-weight:650}
+      .btn,.pill,.nav a,.rail a,.tag,.deadline,.lock,.eyebrow{font-weight:650}
+      .mark,.num,.section-num,.rank,.step b,.chip{font-weight:700}
+      .section-head{background:linear-gradient(180deg,#fff,#fbfcfd)}
+      .job.primary-job,.step.active{background:#fffaf8}
+      .primary{box-shadow:none}
+      .section,.job,.detail-card,.side-card,.rank-row,.drop{border-color:#e7ebf0}
+      .browse-board{display:grid;grid-template-columns:300px 1fr;gap:16px;margin-top:22px;border:1px solid var(--line);border-radius:14px;background:white;box-shadow:0 10px 30px rgba(15,23,42,.06);overflow:hidden}.browse-filters{padding:18px;border-right:1px solid var(--line);background:#fbfcfd}.browse-filters h1{font-size:24px;line-height:1.15;margin:0 0 8px}.browse-filters p{margin:0 0 14px;color:var(--muted);font-size:13px;line-height:1.45}.browse-filters input,.browse-filters select{width:100%;height:38px;margin-top:9px;border:1px solid var(--line);border-radius:9px;background:white;padding:0 10px;color:var(--text);font:13px system-ui}.browse-results{padding:16px}.browse-results-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.browse-results-head h2{font-size:17px;margin:0}.browse-results-head span{color:var(--muted);font-size:12px}.result-list{display:grid;gap:10px}.result-row{display:grid;grid-template-columns:1fr 120px 120px;gap:12px;align-items:center;border:1px solid var(--line);border-radius:10px;padding:12px;background:white}.result-row.active{border-color:#f7b896;background:#fffaf8}.result-row h3{margin:0;font-size:15px;font-weight:650}.result-row p{margin:4px 0 0;color:var(--muted);font-size:12px}.result-meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+      @media(max-width:1300px){.wrap{padding-left:20px;padding-right:20px}.grid3{gap:10px}.hero{grid-template-columns:1fr 330px}h1{font-size:40px}.flow{grid-template-columns:220px 1fr}.detail{grid-template-columns:1fr}.rank-row{grid-template-columns:46px 1fr 120px}}
+/* IIHS careers typography alignment: body Open Sans 400, headings Montserrat 400 */
+:root{--iihs-body-font:'Open Sans',Arial,sans-serif;--iihs-heading-font:'Montserrat','Open Sans',Arial,sans-serif}
+body,input,select,textarea,button,p,li,td,th,a,span,small,.btn,.pill,.tag,.chip,.deadline,.kicker,.eyebrow{font-family:var(--iihs-body-font)!important;font-weight:400!important;letter-spacing:0!important}
+h1,h2,h3,h4,h5,h6,.brand strong,.title,.job-title,.section h2,.head h2,.panel-head h2,.hero h1{font-family:var(--iihs-heading-font)!important;font-weight:400!important;letter-spacing:0!important}
+strong,b,.mark,.rank,.num,.section-num,.rank-box,.rank-number,.badge{font-family:var(--iihs-body-font)!important;font-weight:600!important;letter-spacing:0!important}
+.nav a,.filter-title{font-family:var(--iihs-body-font)!important;font-weight:800!important;letter-spacing:1px!important}
+.btn.primary,.primary{font-weight:400!important}
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="top">
+        <a class="brand" href="#"><span class="mark">IIHS</span><span><strong>IIHS Careers</strong><span>Design Set 1 · Clean sequential app flow</span></span></a>
+        <nav class="nav"><a class="active" href="#step1">Open Jobs</a><a href="#step3">Preferences</a><a href="#step4">Resume</a><a href="#step5">Dashboard</a></nav>
+        <span class="pill hot">Email + OTP verified</span>
+      </header>
+
+      <section class="browse-board" aria-label="Browse open JDs first">
+        <aside class="browse-filters"><h1>Browse open JDs</h1><p>Search and filter before choosing the primary role for this application.</p><input value="Urban" aria-label="Search jobs"><select><option>All locations</option><option>Bengaluru</option></select><select><option>All functions</option><option>Research</option></select><select><option>All experience levels</option><option>4-8 years</option></select></aside>
+        <div class="browse-results"><div class="browse-results-head"><h2>24 open roles</h2><span>Sorted by closing date</span></div><div class="result-list"><article class="result-row active"><span><h3>Associate Director - Urban Research</h3><p>Research · Bengaluru · Full-time</p><span class="result-meta"><b class="tag">7-10 yrs</b><b class="tag">Closes 28 Jun</b></span></span><a class="btn primary" href="#step1">Apply Now</a><a class="btn secondary" href="#step2">View JD</a></article><article class="result-row"><span><h3>Programme Coordinator - Urban Fellows</h3><p>Academics · Bengaluru · Full-time</p><span class="result-meta"><b class="tag">2-4 yrs</b><b class="tag">Closes 04 Jul</b></span></span><a class="btn secondary" href="#step2">Add</a><a class="btn secondary" href="#step1">View JD</a></article><article class="result-row"><span><h3>Consultant - Climate and Infrastructure</h3><p>Practice · Delhi NCR · Contract</p><span class="result-meta"><b class="tag">4-6 yrs</b><b class="tag">Closes 07 Jul</b></span></span><a class="btn secondary" href="#step2">Add</a><a class="btn secondary" href="#step1">View JD</a></article></div></div>
+      </section>
+
+      <section class="hero">
+        <div><span class="eyebrow">Candidate path clarified</span><h1>Start with one JD, add two more, then lock the order before resume upload.</h1><p>The layout now shows the decision flow one section at a time instead of placing every component together.</p></div>
+        <aside class="summary"><h2>Current application</h2><div><span>Primary JD</span><strong>Selected</strong></div><div><span>Additional JDs</span><strong>2 added</strong></div><div><span>Total selected</span><strong>3/3</strong></div><div><span>Next action</span><strong>Upload resume</strong></div></aside>
+      </section>
+
+      <div class="flow">
+        <aside class="rail"><a class="active" href="#step1"><span class="num">1</span>Select primary JD</a><a href="#step2"><span class="num">2</span>Add two more</a><a href="#step3"><span class="num">3</span>Confirm order</a><a href="#step4"><span class="num">4</span>Upload resume</a><a href="#step5"><span class="num">5</span>Continue form</a></aside>
+        <div class="sections">
+          <section id="step1" class="section">
+            <div class="section-head"><span class="section-title"><span class="section-num">1</span><span><h2>Browse open JDs and choose the first role</h2><p>Candidate can browse publicly. Clicking Apply Now makes that JD preference 1 by default.</p></span></span><a class="btn primary" href="#step2">Apply Now</a></div>
+            <div class="grid3">
+              <article class="job primary-job"><div class="tags"><span class="tag">Research</span><span class="tag">Bengaluru</span><span class="tag">Full-time</span><span class="tag">7-10 yrs</span></div><h3>Associate Director - Urban Research</h3><p>Lead research design, institutional partnerships, evidence synthesis, and policy-facing outputs.</p><div class="job-foot"><span class="deadline">Closes 28 Jun</span><span class="btn ghost">Preference #1</span></div></article>
+              <article class="job"><div class="tags"><span class="tag">Practice</span><span class="tag">Delhi NCR</span><span class="tag">Contract</span></div><h3>Consultant - Climate and Infrastructure</h3><p>Support applied projects across climate resilience, infrastructure planning, and field research.</p><div class="job-foot"><span class="deadline">Closes 07 Jul</span><span class="btn secondary">View JD</span></div></article>
+              <article class="job"><div class="tags"><span class="tag">Academics</span><span class="tag">Bengaluru</span><span class="tag">Full-time</span></div><h3>Programme Coordinator - Urban Fellows</h3><p>Coordinate academic operations, calendars, documentation, and candidate communication.</p><div class="job-foot"><span class="deadline">Closes 04 Jul</span><span class="btn secondary">View JD</span></div></article>
+            </div>
+          </section>
+
+          <section id="step2" class="section">
+            <div class="section-head"><span class="section-title"><span class="section-num">2</span><span><h2>Review the JD, then add two compatible roles</h2><p>The primary JD remains visible while the candidate adds role 2 and role 3 from the same results set.</p></span></span><span class="pill hot">3/3 selected</span></div>
+            <div class="detail">
+              <article class="detail-card"><h3>Associate Director - Urban Research</h3><p>This JD is the anchor of the application. It stays in rank 1 unless the candidate changes the order in the next section.</p><ul><li>Lead research frameworks and partner reviews.</li><li>Translate urban evidence into briefs and publications.</li><li>Maintain quality standards for datasets, ethics, and reporting.</li></ul></article>
+              <aside class="side-card"><h4>Selected roles</h4><div><span>#1</span><strong>Associate Director - Urban Research</strong></div><div><span>#2</span><strong>Programme Coordinator - Urban Fellows</strong></div><div><span>#3</span><strong>Consultant - Climate and Infrastructure</strong></div><div><span>Limit</span><strong>Maximum reached</strong></div></aside>
+            </div>
+          </section>
+
+          <section id="step3" class="section">
+            <div class="section-head"><span class="section-title"><span class="section-num">3</span><span><h2>Confirm preference order before moving ahead</h2><p>The candidate sees exactly what will be submitted. Preferences cannot be changed after declaration.</p></span></span><a class="btn primary" href="#step4">Confirm order</a></div>
+            <div class="rank-list">
+              <article class="rank-row"><span class="rank">1</span><span><h3>Associate Director - Urban Research</h3><p>Default from Apply Now</p></span><span class="btn ghost">Primary</span></article>
+              <article class="rank-row"><span class="rank">2</span><span><h3>Programme Coordinator - Urban Fellows</h3><p>Added as second preference</p></span><span class="btn secondary">Move up</span></article>
+              <article class="rank-row"><span class="rank">3</span><span><h3>Consultant - Climate and Infrastructure</h3><p>Added as third preference</p></span><span class="btn secondary">Move up</span></article>
+            </div>
+            <p class="lock">Once submitted, this ranked order is locked for recruiter review.</p>
+          </section>
+
+          <section id="step4" class="section">
+            <div class="section-head"><span class="section-title"><span class="section-num">4</span><span><h2>Upload resume and review extracted fields</h2><p>Accepted formats: PDF/DOC/DOCX. Maximum file size: 5MB.</p></span></span><span class="pill">Draft autosaved</span></div>
+            <div class="upload-grid"><div class="drop"><span><b>Drop resume or choose file</b><span>Resume parsing pre-fills personal, education, and work experience fields.</span></span></div><div class="review"><div class="flag"><span><b>Needs review:</b> Current employer confidence is low.</span><span>68%</span></div><div class="flag"><span><b>Needs review:</b> Education end date missing.</span><span>Fix</span></div><div class="flag"><span><b>Ready:</b> Email and phone extracted.</span><span>OK</span></div></div></div>
+          </section>
+
+          <section id="step5" class="section">
+            <div class="section-head"><span class="section-title"><span class="section-num">5</span><span><h2>Continue into the shared application stepper</h2><p>Same form for all selected roles: resume, personal, education, work experience, documents, declaration.</p></span></span><a class="btn primary" href="#">Continue</a></div>
+            <div class="steps"><article class="step active"><b>1</b><h3>Resume</h3><p>Upload and confirm extraction.</p></article><article class="step"><b>2</b><h3>Personal</h3><p>Contact and candidate details.</p></article><article class="step"><b>3</b><h3>Education</h3><p>Degrees and institutions.</p></article><article class="step"><b>4</b><h3>Work Experience</h3><p>Roles and projects.</p></article><article class="step"><b>5</b><h3>Documents</h3><p>Cover letter and references.</p></article><article class="step"><b>6</b><h3>Declaration</h3><p>Consent and final submit.</p></article></div>
+            <div class="status"><span class="chip registered">Registered</span><span class="chip progress">In-Progress</span><span class="chip submitted">Submitted</span><span class="chip shortlisted">Shortlisted</span><span class="chip rejected">Rejected</span></div>
+          </section>
+        </div>
+      </div>
+    </div>
+    <aside class="toast"><strong>Welcome email ready</strong><br><span>Submission and rejection notifications use the same email system.</span></aside>
+  </body>
+</html>
