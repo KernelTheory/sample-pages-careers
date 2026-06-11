@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IIHS Careers · Design 6 · Candidate view (50 open positions)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      :root{--brand:#881803;--orange:#de5a2a;--ink:#101828;--text:#344054;--muted:#667085;--line:#e4e7ec;--soft:#fff7f3;--bg:#f6f7f9;--green:#047857;--blue:#1d4ed8;--amber:#92400e;--red:#b91c1c}
+      *{box-sizing:border-box}body{margin:0;min-width:1180px;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{text-decoration:none;color:inherit}
+      .app{display:grid;grid-template-columns:300px 1fr;min-height:100vh}
+      .rail{background:#18201d;color:white;padding:22px;position:sticky;top:0;height:100vh;overflow:auto}.brand{display:flex;gap:12px;align-items:center}.brand strong{font-size:15px}.brand span span{display:block;color:#bac7c2;font-size:12px;margin-top:2px}
+      .filter-title{margin:24px 0 10px;color:#d7e0dc;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}.rail input,.rail select{width:100%;height:40px;margin-bottom:10px;border:1px solid #34433e;border-radius:10px;background:#101815;color:white;padding:0 11px;font:13px system-ui}
+      .railnav{display:grid;gap:6px;margin-top:6px}.railnav button{display:flex;justify-content:space-between;align-items:center;width:100%;text-align:left;border:1px solid #28332e;background:#111916;color:#d7e0dc;border-radius:10px;padding:10px 11px;font-size:12.5px;font-weight:700;cursor:pointer}.railnav button.active{background:var(--brand);border-color:var(--brand);color:#fff}.railnav .b{background:#1f2a25;border-radius:999px;padding:2px 8px;font-size:11px}.railnav button.active .b{background:#a83b1f}
+      .rail .hint{margin-top:16px;border:1px solid #34433e;border-radius:14px;background:#111916;padding:13px;color:#d7e0dc;font-size:12px;line-height:1.5}
+      .main{padding:22px 24px 60px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}.top h1{margin:0;font-size:26px;font-weight:650}.top p{margin:5px 0 0;color:var(--muted);font-size:13px}
+      .pill{display:inline-flex;align-items:center;justify-content:center;min-height:32px;border:1px solid var(--line);border-radius:999px;background:white;color:var(--text);padding:0 11px;font-size:12px;font-weight:720}.hot{background:var(--soft);border-color:#fbd5bf;color:var(--brand)}
+      .screen{display:none}.screen.on{display:block}
+      .workspace{display:grid;grid-template-columns:minmax(500px,1fr) 420px;gap:16px;align-items:start}.panel{border:1px solid var(--line);border-radius:16px;background:white;box-shadow:0 16px 50px rgba(16,24,40,.08);overflow:hidden}.panel-head{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;border-bottom:1px solid var(--line);padding:16px}.panel-head h2{margin:0;font-size:18px;font-weight:650}.panel-head p{margin:5px 0 0;color:var(--muted);font-size:12px}
+      .sort{display:flex;gap:8px;align-items:center}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:36px;border:1px solid transparent;border-radius:10px;padding:0 12px;font-size:12px;font-weight:760;cursor:pointer}.primary{background:var(--brand);color:white}.secondary{background:white;border-color:var(--line);color:var(--text)}.soft-btn{background:var(--soft);border-color:#fbd5bf;color:var(--brand)}
+      .feed{display:grid;gap:10px;padding:14px;max-height:none}.job{display:grid;grid-template-columns:1fr 150px;gap:14px;border:1px solid var(--line);border-radius:14px;background:white;padding:14px}.job.active{border-color:#f7b896;background:#fffaf8}.job h3{margin:0;font-size:16px;font-weight:650;cursor:pointer}.job h3:hover{color:var(--brand)}.job p{margin:5px 0 9px;color:var(--muted);font-size:12px;line-height:1.45}
+      .tags{display:flex;flex-wrap:wrap;gap:6px}.tag{border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--muted);padding:4px 8px;font-size:11px;font-weight:700}.realtag{background:#ecfdf5;border-color:#a7f3d0;color:#047857}
+      .job-actions{display:grid;gap:8px;align-content:center}
+      .pager{display:flex;justify-content:space-between;align-items:center;padding:6px 16px 16px;color:var(--muted);font-size:12px}.pager .pages{display:flex;gap:6px}.pager .pages span{min-width:30px;height:30px;display:grid;place-items:center;border:1px solid var(--line);border-radius:8px;background:#fff;font-weight:700;cursor:pointer}.pager .pages span.on{background:var(--brand);color:#fff;border-color:var(--brand)}
+      .preview{position:sticky;top:22px}.preview-cover{padding:18px;background:linear-gradient(135deg,#fff,var(--soft));border-bottom:1px solid var(--line)}.preview-cover h2{margin:10px 0 0;color:var(--brand);font-size:24px;line-height:1.12;font-weight:650}.preview-cover .meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}.preview-body{padding:16px;display:grid;gap:14px}.preview-body h4{margin:2px 0 0;font-size:13px}.preview-body p,.preview-body li{font-size:12.5px;line-height:1.55;color:var(--text)}.preview-body ul{margin:6px 0 0;padding-left:18px;display:grid;gap:5px}
+      .fit{border:1px solid #dbeafe;background:#eff6ff;color:#1e3a8a;border-radius:14px;padding:13px;font-size:12px;line-height:1.45}.fit b{display:block;margin-bottom:5px}
+      .shortlist{display:grid;gap:9px}.shortlist .srow{display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:center;border:1px solid var(--line);border-radius:12px;padding:10px}.rank{display:grid;place-items:center;width:30px;height:30px;border-radius:9px;background:var(--brand);color:white;font-weight:800}.shortlist strong{font-size:13px}.shortlist small{display:block;color:var(--muted);margin-top:2px}
+      .flow{display:grid;gap:16px}.stage{border:1px solid var(--line);border-radius:16px;background:white;box-shadow:0 16px 50px rgba(16,24,40,.06);overflow:hidden}.stage-head{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;border-bottom:1px solid var(--line);padding:16px;background:#fbfcfd}.stage-head h2{margin:0;font-size:18px;font-weight:650}.stage-head p{margin:5px 0 0;color:var(--muted);font-size:12px}
+      .rank-table{width:100%;border-collapse:collapse}.rank-table td,.rank-table th{border-bottom:1px solid var(--line);padding:12px 14px;text-align:left}.rank-table th{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.08em}
+      .upload{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:16px}.drop{display:grid;place-items:center;min-height:190px;border:2px dashed #cbd5e1;border-radius:14px;background:#f8fafc;text-align:center}.drop b{font-size:18px}.drop span{display:block;color:var(--muted);font-size:12px;margin-top:7px}.flag{display:flex;justify-content:space-between;border:1px solid #fde68a;border-radius:12px;background:#fffbeb;color:#78350f;padding:11px;margin-bottom:9px;font-size:12px}
+      .steps{display:grid;grid-template-columns:repeat(6,1fr);gap:9px;padding:16px}.step{border:1px solid var(--line);border-radius:12px;padding:12px;min-height:96px}.step.active{background:var(--soft);border-color:#fbd5bf}.step b{display:grid;place-items:center;width:26px;height:26px;border-radius:8px;background:var(--brand);color:white}.step h3{font-size:13px;font-weight:650;margin:9px 0 3px}.step p{margin:0;color:var(--muted);font-size:11px}
+      .chips{display:flex;gap:8px;padding:0 16px 16px;flex-wrap:wrap}.chip{border-radius:999px;padding:7px 10px;font-size:11px;font-weight:750}.registered{background:#eef2ff;color:#3730a3}.progress{background:#eff6ff;color:#1d4ed8}.submitted{background:#ecfdf5;color:#047857}.shortlisted{background:#fef3c7;color:#92400e}.rejected{background:#fef2f2;color:#b91c1c}
+      .apps{display:grid;gap:10px;padding:16px}.appcard{border:1px solid var(--line);border-radius:12px;padding:14px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center}.appcard h4{margin:0 0 4px;font-size:14px}.appcard p{margin:0;color:var(--muted);font-size:12px}
+      .emails{display:grid;gap:10px;padding:0 16px 16px}.email{border:1px solid var(--line);border-radius:12px;overflow:hidden}.email .ehead{display:flex;justify-content:space-between;background:#f8fafc;padding:10px 13px;font-size:12px;border-bottom:1px solid var(--line)}.email .ebody{padding:13px;font-size:13px;color:var(--text);line-height:1.55}
+      .logo-img{display:block;width:54px;height:auto;max-height:42px;object-fit:contain;flex:0 0 auto}
+:root{--iihs-body-font:'Open Sans',Arial,sans-serif;--iihs-heading-font:'Montserrat','Open Sans',Arial,sans-serif}
+body,input,select,textarea,button,p,li,td,th,a,span,small,.btn,.pill,.tag,.chip{font-family:var(--iihs-body-font)!important;letter-spacing:0!important}
+h1,h2,h3,h4,h5,h6,.brand strong,.panel-head h2,.preview-cover h2,.stage-head h2,.job h3{font-family:var(--iihs-heading-font)!important;font-weight:400!important}
+strong,b,.rank,.badge{font-family:var(--iihs-body-font)!important;font-weight:600!important}
+.btn.primary,.primary{font-weight:400!important}
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <aside class="rail">
+        <a class="brand" href="#"><img class="logo-img" src="iihs-co-in-logo.jpg" alt="IIHS logo"><span><strong>Careers</strong><span>Design 6 · Discovery workspace</span></span></a>
+        <div class="filter-title">Browse 50 open JDs</div>
+        <input id="q" placeholder="urban, finance, ICT…" aria-label="Search jobs">
+        <select id="fFunc"><option value="">All functions</option></select>
+        <select id="fLoc"><option value="">All locations</option></select>
+        <select id="fType"><option value="">All job types</option><option>Full-time</option><option>Contract · 11 mo</option><option>Regular / Contract</option></select>
+        <select id="fSort"><option value="deadline">Closing soonest</option><option value="title">A–Z</option></select>
+        <div class="filter-title">Candidate journey</div>
+        <nav class="railnav" id="nav">
+          <button data-s="browse" class="active">Discover &amp; preview <span class="b">50</span></button>
+          <button data-s="detail">Full JD detail <span class="b">JD</span></button>
+          <button data-s="rank">Rank preferences <span class="b" id="navsel">0/3</span></button>
+          <button data-s="resume">Resume upload <span class="b">5MB</span></button>
+          <button data-s="stepper">Application form <span class="b">6</span></button>
+          <button data-s="dashboard">My applications <span class="b">3</span></button>
+        </nav>
+        <div class="hint">Candidates browse before applying. Email + OTP is only needed when they continue the ranked application.</div>
+      </aside>
+      <main class="main">
+        <header class="top"><span><h1 id="scr-title">Open JD discovery workspace</h1><p id="scr-sub">50 positions announced · Search, filter, preview, shortlist up to 3, then rank.</p></span><span class="pill hot">Email + OTP verified</span></header>
+
+        <!-- SCREEN 1: BROWSE -->
+        <section class="screen on" id="s-browse">
+          <div class="workspace">
+            <article class="panel">
+              <div class="panel-head"><span><h2 id="roleCount">50 open roles</h2><p>Live result count, filters, metadata, view detail, Apply&nbsp;Now.</p></span><span class="sort"><span class="pill" id="sortDeadline">Deadline</span><span class="pill">Newest</span></span></div>
+              <div class="feed" id="feed"></div>
+              <div class="pager"><span id="resultCount">—</span><div class="pages" id="pages"></div></div>
+            </article>
+            <aside class="panel preview">
+              <div class="preview-cover"><span class="pill hot">JD preview</span><h2 id="pvTitle">—</h2><div class="meta" id="pvMeta"></div></div>
+              <div class="preview-body" id="pvBody"></div>
+            </aside>
+          </div>
+        </section>
+
+        <!-- SCREEN 2: DETAIL -->
+        <section class="screen" id="s-detail">
+          <div class="stage">
+            <div class="stage-head"><span><h2>Full job description</h2><p>The 4 live roles show real IIHS JD content; the rest are representative catalogue entries.</p></span><span><button class="btn secondary" onclick="go('browse')">← Back</button> <button class="btn primary" id="applyNowBtn">Apply Now</button></span></div>
+            <div class="preview-body" id="jdDetail" style="grid-template-columns:1fr;max-width:760px"></div>
+          </div>
+        </section>
+
+        <!-- SCREEN 3: RANK -->
+        <section class="screen" id="s-rank">
+          <div class="flow">
+            <article class="stage">
+              <div class="stage-head"><span><h2>Confirm preference order</h2><p>The selected jobs become one ranked application.</p></span><button class="btn primary" onclick="go('resume')">Confirm ranking →</button></div>
+              <table class="rank-table"><thead><tr><th>Rank</th><th>Job</th><th>Function · Location</th><th>Source</th></tr></thead><tbody id="rankRows"></tbody></table>
+            </article>
+          </div>
+        </section>
+
+        <!-- SCREEN 4: RESUME -->
+        <section class="screen" id="s-resume">
+          <div class="flow">
+            <article class="stage">
+              <div class="stage-head"><span><h2>Upload resume and review extraction</h2><p>PDF / DOC / DOCX, maximum 5MB. Pre-fills personal, education and work-experience fields.</p></span><span class="pill">Draft autosaved</span></div>
+              <div class="upload">
+                <div class="drop"><span><b>Drop resume or choose file</b><span>e.g. Arjun_Rao_ICT_Resume.pdf</span></span></div>
+                <div>
+                  <div class="flag"><span><b>Needs review:</b> designation confidence low.</span><span>72%</span></div>
+                  <div class="flag"><span><b>Needs review:</b> education dates incomplete.</span><span>Fix</span></div>
+                  <div class="flag"><span><b>Looks good:</b> 3 yrs 2 mo total experience detected.</span><span>✓</span></div>
+                </div>
+              </div>
+              <div style="padding:0 16px 16px"><button class="btn primary" onclick="go('stepper')">Continue →</button></div>
+            </article>
+          </div>
+        </section>
+
+        <!-- SCREEN 5: STEPPER -->
+        <section class="screen" id="s-stepper">
+          <div class="flow">
+            <article class="stage">
+              <div class="stage-head"><span><h2>Shared application stepper</h2><p>Same form for all selected roles.</p></span><button class="btn primary" onclick="go('dashboard')">Submit →</button></div>
+              <div class="steps">
+                <article class="step active"><b>1</b><h3>Resume</h3><p>Confirm extraction.</p></article>
+                <article class="step"><b>2</b><h3>Personal</h3><p>Contact details.</p></article>
+                <article class="step"><b>3</b><h3>Education</h3><p>Qualifications.</p></article>
+                <article class="step"><b>4</b><h3>Work Experience</h3><p>Roles and projects.</p></article>
+                <article class="step"><b>5</b><h3>Documents</h3><p>Cover letter.</p></article>
+                <article class="step"><b>6</b><h3>Declaration</h3><p>Submit.</p></article>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- SCREEN 6: DASHBOARD -->
+        <section class="screen" id="s-dashboard">
+          <div class="flow">
+            <article class="stage">
+              <div class="stage-head"><span><h2>My applications &amp; notifications</h2><p>Status per preference plus every email the candidate receives.</p></span><button class="btn secondary" onclick="go('browse')">Browse more</button></div>
+              <div class="chips"><span class="chip registered">Registered</span><span class="chip progress">In-Progress</span><span class="chip submitted">Submitted</span><span class="chip shortlisted">Shortlisted</span><span class="chip rejected">Rejected</span></div>
+              <div class="apps" id="appCards"></div>
+              <div class="emails">
+                <div class="email"><div class="ehead"><span><b>Application received</b> · careers@iihs.co.in</span><span>just now</span></div><div class="ebody">Thank you for applying to IIHS. We've received your ranked application (3 preferences). Application ID <b>IIHS-2026-04821</b>.</div></div>
+                <div class="email"><div class="ehead"><span><b>Shortlisted</b> · careers@iihs.co.in</span><span>5 days later</span></div><div class="ebody">You've been shortlisted for your first preference. Please confirm interview availability via the link.</div></div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const REAL={
+        finance:{about:"The position is based in Bengaluru and is involved in a range of Finance and Accounting related activities of the IIHS operations.",resp:["Cost centre-wise entries in the accounting software; bills receivable and payable","Revenue recognition, fixed assets accounting, cash and bank maintenance","Tracking statutory remittances and filing; expenditure control; internal & statutory audits","Payroll processing; actuals-vs-budget reporting; vendor master and project audits"],spec:["Graduate in Commerce; CA Inter completed may also apply","4–5 years of relevant experience","Exposure to ERP systems across receivables, payables, payroll, revenue, fixed assets","MS Office (Word, Excel, PowerPoint) proficiency is a must"],report:"Reports to the Lead – Finance at IIHS."},
+        ict:{about:"Frontline ICT role ensuring smooth, reliable functioning of the technology environment — day-to-day user support, system/network health and secure, documented IT operations. Contractual, 11 months, renewable.",resp:["Installing/configuring hardware, software, peripherals; troubleshooting for end-users","Monitoring systems & networks for uptime; backups, recovery, security protocols","Inventory, licensing compliance, patch management; ticketing per SLA; on-call rotation","Wi-Fi/cabling/VLAN support; projectors, VC equipment and webinars"],spec:["Bachelor's degree in IT, Computer Science or related field","2–4 years in IT Support Services","Strong technical and troubleshooting skills; independent and team worker","Excellent communication, problem-solving and time-management"],report:"External Consultant coordinating with the Lead — ICT at IIHS."},
+        culinary:{about:"Culinary specialist knowledgeable in bakery preparation, supporting campus dining — nutritious meals and bakery products with quality, hygiene and efficient kitchen operations. Contractual, 11 months, renewable.",resp:["Preparing/supervising daily food production for campus dining","Breads, buns, cakes, pastries, cookies, desserts; bakery production schedules","Menu planning; FSSAI food-safety, hygiene and sanitation compliance","Inventory/FIFO stock rotation; procurement coordination; supervising kitchen staff; cost control"],spec:["Diploma/Degree in Hotel Management, Culinary Arts or Bakery & Confectionery","3–5 years in institutional catering, hotels or large-scale food production","Practical bakery production and bulk cooking; food-safety standards","Team supervision, production planning and time management"],report:"External Consultant coordinating with the Manager — Administration at IIHS."},
+        hse:{about:"Supports implementation of Health, Safety & Environment systems at IIHS — statutory compliance, inspections, contractor safety, documentation, training and a safe campus. Regular or 11-month contractual with potential to turn regular.",resp:["Maintaining HSE legal compliance records and statutory documentation","Safety inspections across construction, kitchens, hostels, offices, vendor zones","Risk assessments and corrective actions; contractor safety and PPE monitoring","Toolbox talks, inductions, incident reporting, mock drills, safety reports"],spec:["Diploma/Bachelor's in Technology/Engineering or Science with safety exposure; DGFASLI Industrial Safety Diploma preferable","5–6 years HSE experience (construction preferred)","Safety standards & compliance knowledge; strong documentation/reporting","English & Kannada preferred, Hindi for site role; rotational shifts"],report:"Reports to the Manager – HSE Operations at IIHS."}
+      };
+      const J=(id,title,fn,loc,type,exp,deadline,desc,real)=>({id,title,fn,loc,type,exp,deadline,desc,real});
+      const JOBS=[
+        J(1,"Associate – Finance","Finance","Bengaluru (Sadashivanagar)","Full-time","4–5 yrs","28 Jun","Cost-centre accounting, receivables/payables, payroll, audits and budget reporting.","finance"),
+        J(2,"Associate – Information & Communication Technology (ICT)","ICT","Bengaluru (Sadashivanagar)","Contract · 11 mo","2–4 yrs","30 Jun","Frontline IT support: installs, troubleshooting, network/system health and security.","ict"),
+        J(3,"Culinary Specialist — Administration","Administration","Bengaluru (Kengeri)","Contract · 11 mo","3–5 yrs","02 Jul","Bakery and bulk food production for campus dining with FSSAI hygiene and inventory control.","culinary"),
+        J(4,"Associate – HSE Operations — Administration","Administration","Bengaluru (Kengeri)","Regular / Contract","5–6 yrs","02 Jul","Health, Safety & Environment compliance, inspections, contractor safety and training.","hse"),
+        J(5,"Associate Professor – Urban Economics","Academics","Bengaluru (Sadashivanagar)","Full-time","8–12 yrs","15 Jul","Teaching and research leadership in urban and regional economics."),
+        J(6,"Assistant Professor – Urban Planning","Academics","Bengaluru","Full-time","5–8 yrs","15 Jul","Studio teaching, planning theory and supervision in the urban curriculum."),
+        J(7,"Teaching Associate – Urban Fellows Programme","Academics","Bengaluru","Full-time","1–3 yrs","08 Jul","Studio teaching support, student documentation and curriculum coordination."),
+        J(8,"Programme Coordinator – Academics","Academics","Bengaluru","Full-time","3–5 yrs","05 Jul","Academic operations, scheduling and candidate-facing communication."),
+        J(9,"Academic Associate – Curriculum & Pedagogy","Academics","Bengaluru","Contract · 11 mo","2–4 yrs","10 Jul","Course material development and learning-design coordination."),
+        J(10,"Senior Research Associate – Urban Climate","Research","Bengaluru","Full-time","5–7 yrs","12 Jul","Lead climate-resilience research design, synthesis and publications."),
+        J(11,"Research Associate – Water & Sanitation","Research","Bengaluru","Full-time","3–5 yrs","09 Jul","Field research, data workflows and policy translation on WASH."),
+        J(12,"Research Associate – Housing & Land","Research","Delhi","Full-time","3–5 yrs","11 Jul","Applied research on housing, land markets and tenure."),
+        J(13,"Senior Associate – Geospatial / GIS","Research","Bengaluru","Full-time","4–6 yrs","14 Jul","Geospatial analysis, mapping and remote-sensing for research."),
+        J(14,"Research Analyst – Data & Surveys","Research","Bengaluru","Contract · 11 mo","1–3 yrs","26 Jun","Survey support, data cleaning and quantitative analysis."),
+        J(15,"Associate – Economics & Public Finance Research","Research","Bengaluru","Full-time","3–5 yrs","13 Jul","Municipal finance and public-economics research and briefs."),
+        J(16,"Senior Associate – Urban Practice","Practice","Delhi","Full-time","5–7 yrs","18 Jul","Lead practice engagements, partner coordination and field delivery."),
+        J(17,"Programme Manager – Practice Programme","Practice","Delhi","Full-time","6–8 yrs","20 Jul","Budgets, reporting, field delivery and implementation routines."),
+        J(18,"Associate – Climate & Sustainability Practice","Practice","Bengaluru","Full-time","3–5 yrs","16 Jul","Support climate-action projects, partners and reporting."),
+        J(19,"Project Associate – Infrastructure","Practice","Mumbai","Contract · 11 mo","2–4 yrs","24 Jun","Field coordination and documentation on infrastructure projects."),
+        J(20,"Communications Officer – Digital","Communications","Hybrid","Full-time","2–4 yrs","07 Jul","Editorial publishing, newsletters, campaigns and web storytelling."),
+        J(21,"Senior Associate – Editorial & Publications","Communications","Bengaluru","Full-time","4–6 yrs","19 Jul","Commissioning, editing and producing IIHS publications."),
+        J(22,"Design Associate – Visual Communication","Communications","Bengaluru","Contract · 11 mo","2–4 yrs","22 Jun","Layouts, infographics and brand assets across print and digital."),
+        J(23,"Associate – Events & Outreach","Communications","Bengaluru","Full-time","2–4 yrs","17 Jul","Conferences, public events and outreach coordination."),
+        J(24,"Senior Associate – Finance & Accounts","Finance","Bengaluru","Full-time","6–8 yrs","21 Jul","Statutory accounts, audits and financial reporting leadership."),
+        J(25,"Associate – Procurement","Operations","Bengaluru","Full-time","3–5 yrs","10 Jul","Vendor management, RFPs and purchase-order processing."),
+        J(26,"Associate – Human Resources","Human Resources","Bengaluru","Full-time","3–5 yrs","12 Jul","HR operations, onboarding and employee lifecycle support."),
+        J(27,"Senior Associate – Talent Acquisition","Human Resources","Bengaluru","Full-time","4–6 yrs","23 Jul","End-to-end recruitment across academic and operations roles."),
+        J(28,"Senior Associate – ICT Infrastructure","ICT","Bengaluru","Contract · 11 mo","5–7 yrs","25 Jun","Network, server and infrastructure operations and DR testing."),
+        J(29,"Associate – Administration","Administration","Bengaluru (Kengeri)","Contract · 11 mo","2–4 yrs","28 Jun","Office administration, coordination and records management."),
+        J(30,"Manager – Campus Operations","Operations","Bengaluru (Kengeri)","Full-time","8–10 yrs","28 Jul","Run day-to-day campus operations, facilities and services."),
+        J(31,"Associate – Facilities Management","Operations","Bengaluru (Kengeri)","Contract · 11 mo","3–5 yrs","29 Jun","Building upkeep, maintenance contracts and vendor coordination."),
+        J(32,"Associate – Legal & Compliance","Legal","Bengaluru","Full-time","4–6 yrs","24 Jul","Contracts, compliance and regulatory support."),
+        J(33,"Associate – Library & Knowledge Resources","Library","Bengaluru","Full-time","2–4 yrs","14 Jul","Collection management, cataloguing and research support."),
+        J(34,"Associate – Student Services","Student Services","Bengaluru","Full-time","2–4 yrs","11 Jul","Student support, records and well-being coordination."),
+        J(35,"Associate – Development & Partnerships","Development","Delhi","Full-time","4–6 yrs","26 Jul","Fundraising, grants and institutional partnerships."),
+        J(36,"Executive Assistant – Director's Office","Administration","Bengaluru","Full-time","3–5 yrs","08 Jul","Calendar, correspondence and coordination for the Director's office."),
+        J(37,"Senior Manager – Strategy & Planning","Operations","Bengaluru","Full-time","10–14 yrs","30 Jul","Institutional strategy, planning and cross-team coordination."),
+        J(38,"Associate – Monitoring & Evaluation","Practice","Bengaluru","Full-time","3–5 yrs","15 Jul","M&E frameworks, indicators and impact reporting."),
+        J(39,"GIS Analyst – Geospatial Lab","Research","Bengaluru","Contract · 11 mo","1–3 yrs","27 Jun","Spatial datasets, map production and lab support."),
+        J(40,"Associate – Training & Lifelong Learning","Academics","Bengaluru","Full-time","3–5 yrs","13 Jul","Executive education and blended-learning programme delivery."),
+        J(41,"Video & Multimedia Producer","Communications","Bengaluru","Contract · 11 mo","2–4 yrs","23 Jun","Filming, editing and multimedia production for IIHS."),
+        J(42,"Associate – Grants & Contracts","Finance","Bengaluru","Full-time","4–6 yrs","22 Jul","Grant budgeting, compliance and donor reporting."),
+        J(43,"Network & Systems Administrator","ICT","Bengaluru","Full-time","4–6 yrs","16 Jul","Server, network and security administration."),
+        J(44,"Associate – Hostel & Residential Services","Operations","Bengaluru (Kengeri)","Contract · 11 mo","2–4 yrs","30 Jun","Residential operations, student housing and services."),
+        J(45,"Safety Officer – Construction Sites","Administration","Bengaluru (Kengeri)","Contract · 11 mo","3–5 yrs","04 Jul","On-site construction safety supervision and reporting."),
+        J(46,"Senior Research Associate – Mobility & Transport","Research","Delhi","Full-time","5–7 yrs","21 Jul","Lead transport and mobility research and engagements."),
+        J(47,"Associate – Sustainability & Energy","Practice","Bengaluru","Full-time","3–5 yrs","18 Jul","Energy-transition and sustainability project support."),
+        J(48,"Web Developer – Digital Platforms","ICT","Bengaluru","Full-time","3–5 yrs","17 Jul","Build and maintain IIHS web platforms and tools."),
+        J(49,"Associate – Alumni Relations","Development","Bengaluru","Contract · 11 mo","2–4 yrs","29 Jun","Alumni engagement, events and database management."),
+        J(50,"Front Office Executive – Administration","Administration","Bengaluru (Sadashivanagar)","Contract · 11 mo","1–3 yrs","25 Jun","Reception, visitor management and front-office coordination.")
+      ];
+      const dnum=d=>{const p=d.split(" ");return ({Jun:600,Jul:700}[p[1]])+(+p[0]);};
+      let shortlist=[]; let filterFn=""; let preview=JOBS[0]; let activeDetail=JOBS[0];
+
+      const fFunc=document.getElementById('fFunc');[...new Set(JOBS.map(j=>j.fn))].sort().forEach(fn=>{const o=document.createElement('option');o.value=fn;o.textContent=fn;fFunc.appendChild(o);});
+      const fLoc=document.getElementById('fLoc');[...new Set(JOBS.map(j=>j.loc))].sort().forEach(l=>{const o=document.createElement('option');o.value=l;o.textContent=l;fLoc.appendChild(o);});
+
+      function filtered(){
+        const q=(document.getElementById('q').value||'').toLowerCase();
+        const fn=document.getElementById('fFunc').value, loc=document.getElementById('fLoc').value, type=document.getElementById('fType').value, sort=document.getElementById('fSort').value;
+        let list=JOBS.filter(j=>(!fn||j.fn===fn)&&(!loc||j.loc===loc)&&(!type||j.type===type)&&(!q||(j.title+' '+j.fn+' '+j.desc).toLowerCase().includes(q)));
+        list.sort((a,b)=> sort==='title'? a.title.localeCompare(b.title) : dnum(a.deadline)-dnum(b.deadline));
+        return list;
+      }
+      const isSel=id=>shortlist.includes(id);
+      function renderFeed(){
+        const list=filtered(); const feed=document.getElementById('feed'); feed.innerHTML='';
+        list.slice(0,10).forEach(j=>{
+          const sel=isSel(j.id), rank=shortlist.indexOf(j.id)+1, active=preview.id===j.id;
+          const el=document.createElement('article'); el.className='job'+(active?' active':'');
+          el.innerHTML=`<span><h3 onclick="setPreview(${j.id})">${j.title}</h3><p>${j.desc}</p><span class="tags"><b class="tag">${j.fn}</b><b class="tag">${j.loc}</b><b class="tag">${j.exp}</b><b class="tag">Closes ${j.deadline}</b>${j.real?'<b class="tag realtag">Live JD ✓</b>':''}</span></span>
+            <span class="job-actions">${sel?`<span class="btn soft-btn">Shortlisted #${rank}</span>`:`<button class="btn primary" onclick="addJob(${j.id})">${shortlist.length>=3?'Shortlist full':'Apply / Add'}</button>`}<button class="btn secondary" onclick="openDetail(${j.id})">View JD</button></span>`;
+          feed.appendChild(el);
+        });
+        document.getElementById('roleCount').textContent=list.length+' open role'+(list.length===1?'':'s')+(filterFn?'':'');
+        document.getElementById('resultCount').textContent=`Showing 1–${Math.min(10,list.length)} of ${list.length}`;
+        const pages=document.getElementById('pages');pages.innerHTML='';const np=Math.max(1,Math.ceil(list.length/10));for(let i=1;i<=Math.min(np,5);i++){const s=document.createElement('span');s.textContent=i;if(i===1)s.className='on';pages.appendChild(s);}
+        document.getElementById('navsel').textContent=shortlist.length+'/3';
+      }
+      function setPreview(id){preview=JOBS.find(j=>j.id===id);renderFeed();renderPreview();}
+      window.setPreview=setPreview;
+      function renderPreview(){
+        const j=preview, d=j.real?REAL[j.real]:null;
+        document.getElementById('pvTitle').textContent=j.title;
+        document.getElementById('pvMeta').innerHTML=`<span class="tag">${j.fn}</span><span class="tag">${j.loc}</span><span class="tag">${j.type}</span><span class="tag">${j.exp}</span><span class="tag">Closes ${j.deadline}</span>`;
+        document.getElementById('pvBody').innerHTML=`
+          <div class="fit"><b>Why this might fit you</b>${j.real?'Matched on your resume keywords against this live IIHS JD. The candidate still chooses — discovery support, not auto-decision.':'Representative IIHS role shown to illustrate the catalogue at 50 positions.'}</div>
+          <div><h4>About the role</h4><p>${d?d.about:j.desc}</p></div>
+          ${d?`<div><h4>Key responsibilities</h4><ul>${d.resp.slice(0,3).map(r=>`<li>${r}</li>`).join('')}</ul></div>`:''}
+          <div><button class="btn primary" onclick="openDetail(${j.id})">Read full JD</button> <button class="btn secondary" onclick="addJob(${j.id})">Add to shortlist</button></div>
+          <div><h4>Your shortlist (max 3)</h4><div class="shortlist" id="shortlistMini"></div></div>`;
+        renderShortlistMini();
+      }
+      function renderShortlistMini(){
+        const el=document.getElementById('shortlistMini'); if(!el)return;
+        if(!shortlist.length){el.innerHTML='<small style="color:var(--muted)">No positions added yet.</small>';return;}
+        el.innerHTML=shortlist.map((id,i)=>{const j=JOBS.find(x=>x.id===id);return `<div class="srow"><b class="rank">${i+1}</b><span><strong>${j.title}</strong><small>${j.fn} · ${j.loc} · <a href="#" onclick="removeJob(${id});return false" style="color:var(--brand)">remove</a></small></span></div>`;}).join('');
+      }
+      function addJob(id){if(isSel(id))return;if(shortlist.length>=3){alert('You can shortlist up to 3 positions per application.');return;}shortlist.push(id);renderFeed();renderPreview();renderRank();}
+      function removeJob(id){shortlist=shortlist.filter(x=>x!==id);renderFeed();renderPreview();renderRank();}
+      window.addJob=addJob;window.removeJob=removeJob;
+      function openDetail(id){activeDetail=JOBS.find(j=>j.id===id);renderDetail();go('detail');}
+      window.openDetail=openDetail;
+      function renderDetail(){
+        const j=activeDetail,d=j.real?REAL[j.real]:null;
+        document.getElementById('jdDetail').innerHTML=`
+          <div><span class="pill hot">${j.real?'Live IIHS JD':'Open position'}</span><h2 style="font-family:var(--iihs-heading-font);color:var(--brand);margin:10px 0 0;font-size:24px">${j.title}</h2>
+          <div class="meta" style="display:flex;gap:6px;flex-wrap:wrap;margin-top:10px"><span class="tag">${j.fn}</span><span class="tag">${j.loc}</span><span class="tag">${j.type}</span><span class="tag">${j.exp}</span><span class="tag">Closes ${j.deadline}</span></div></div>
+          <div><h4>About the role</h4><p>${d?d.about:j.desc+' This is a representative IIHS position included to show the catalogue at 50 positions.'}</p></div>
+          ${d?`<div><h4>Activities &amp; tasks</h4><ul>${d.resp.map(r=>`<li>${r}</li>`).join('')}</ul></div>
+          <div><h4>Person specification</h4><ul>${d.spec.map(s=>`<li>${s}</li>`).join('')}</ul></div>
+          <div><h4>Structure &amp; reporting</h4><p>${d.report}</p></div>`:''}
+          <div><h4>To apply</h4><p>Click <b>Apply Now</b> to set this as preference 1, or add it to your shortlist and keep browsing. Questions? hr@iihs.co.in.</p></div>`;
+        document.getElementById('applyNowBtn').onclick=()=>{if(!isSel(j.id))addJob(j.id);if(isSel(j.id))go('rank');};
+      }
+      function renderRank(){
+        const tb=document.getElementById('rankRows');
+        if(!shortlist.length){tb.innerHTML='<tr><td colspan="4" style="color:var(--muted)">Shortlist is empty — add positions from Discover.</td></tr>';return;}
+        tb.innerHTML=shortlist.map((id,i)=>{const j=JOBS.find(x=>x.id===id);return `<tr><td><b class="rank">${i+1}</b></td><td>${j.title}</td><td>${j.fn} · ${j.loc}</td><td>${i===0?'Apply Now':'Added'}</td></tr>`;}).join('');
+      }
+      function renderAppCards(){
+        const el=document.getElementById('appCards');const sts=['shortlisted','progress','submitted'];const lbl={shortlisted:'Shortlisted',progress:'Under review',submitted:'Submitted'};
+        if(!shortlist.length){el.innerHTML='<p style="color:var(--muted)">No applications yet.</p>';return;}
+        el.innerHTML=shortlist.map((id,i)=>{const j=JOBS.find(x=>x.id===id);const s=sts[i]||'submitted';return `<div class="appcard"><div><h4>Preference ${i+1} · ${j.title}</h4><p>${j.fn} · ${j.loc} · IIHS-2026-04821</p></div><span class="chip ${s}">${lbl[s]}</span></div>`;}).join('');
+      }
+      const TITLES={browse:['Open JD discovery workspace','50 positions announced · Search, filter, preview, shortlist up to 3, then rank.'],detail:['Full job description','Real IIHS JD content for the 4 live roles'],rank:['Confirm preference order','Up to 3 ranked preferences in one application'],resume:['Upload resume','Parsing pre-fills the shared form'],stepper:['Application form','One shared 6-step form for all preferences'],dashboard:['My applications','Track status and notifications']};
+      function go(s){
+        document.querySelectorAll('.screen').forEach(x=>x.classList.remove('on'));
+        document.getElementById('s-'+s).classList.add('on');
+        document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('active',b.dataset.s===s));
+        document.getElementById('scr-title').textContent=TITLES[s][0];document.getElementById('scr-sub').textContent=TITLES[s][1];
+        if(s==='rank')renderRank();if(s==='dashboard')renderAppCards();if(s==='detail')renderDetail();if(s==='browse')renderPreview();
+        window.scrollTo(0,0);
+      }
+      window.go=go;
+      document.getElementById('nav').addEventListener('click',e=>{const b=e.target.closest('button');if(b)go(b.dataset.s);});
+      ['q','fFunc','fLoc','fType','fSort'].forEach(id=>document.getElementById(id).addEventListener('input',()=>{filterFn=document.getElementById('fFunc').value;renderFeed();}));
+
+      renderFeed();renderPreview();
+    </script>
+  </body>
+</html>
