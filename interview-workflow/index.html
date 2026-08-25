@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Clickable prototype of the IIHS post-shortlisting interview workflow">
+    <title>IIHS Interview Workflow Prototype</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="topbar">
+      <div class="brand">
+        <img src="../iihslogo.png" alt="IIHS">
+        <div>
+          <span class="eyebrow">Recruitment workspace</span>
+          <strong>Interview workflow</strong>
+        </div>
+      </div>
+
+      <div class="prototype-note" aria-label="Prototype notice">
+        <span class="status-dot"></span>
+        Clickable prototype · fictional data
+      </div>
+
+      <div class="role-switcher" aria-label="Switch demo role">
+        <span>View as</span>
+        <div class="segmented-control">
+          <button class="role-button active" type="button" data-role="hr">HR Admin</button>
+          <button class="role-button" type="button" data-role="manager">Hiring Manager</button>
+          <button class="role-button" type="button" data-role="panelist">Panelist</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="persona-card">
+          <span class="avatar" id="persona-avatar">AM</span>
+          <div>
+            <strong id="persona-name">Asha Menon</strong>
+            <span id="persona-role">HR Admin</span>
+          </div>
+        </div>
+
+        <nav aria-label="Workspace navigation">
+          <div class="nav-group" data-role-nav="hr">
+            <span class="nav-label">HR workspace</span>
+            <button class="nav-item active" type="button" data-target="hr-dashboard">
+              <span class="nav-icon" aria-hidden="true">⌂</span> Overview
+            </button>
+            <button class="nav-item" type="button" data-target="hr-workflow">
+              <span class="nav-icon" aria-hidden="true">⇄</span> Interview workflows
+            </button>
+            <button class="nav-item" type="button" data-target="hr-candidate">
+              <span class="nav-icon" aria-hidden="true">◎</span> Candidate review
+              <span class="nav-count">3</span>
+            </button>
+          </div>
+
+          <div class="nav-group hidden" data-role-nav="manager">
+            <span class="nav-label">Hiring Manager workspace</span>
+            <button class="nav-item active" type="button" data-target="manager-dashboard">
+              <span class="nav-icon" aria-hidden="true">⌂</span> My jobs
+            </button>
+            <button class="nav-item" type="button" data-target="manager-candidate">
+              <span class="nav-icon" aria-hidden="true">◎</span> Candidate review
+              <span class="nav-count">2</span>
+            </button>
+          </div>
+
+          <div class="nav-group hidden" data-role-nav="panelist">
+            <span class="nav-label">Panelist workspace</span>
+            <button class="nav-item active" type="button" data-target="panel-dashboard">
+              <span class="nav-icon" aria-hidden="true">✓</span> My feedback
+              <span class="nav-count">2</span>
+            </button>
+            <button class="nav-item" type="button" data-target="panel-feedback">
+              <span class="nav-icon" aria-hidden="true">✎</span> Evaluation form
+            </button>
+          </div>
+        </nav>
+
+        <div class="sidebar-note">
+          <strong>Access is assignment-based</strong>
+          <p id="access-copy">You can manage every interview workflow and view consolidated feedback.</p>
+        </div>
+      </aside>
+
+      <main id="main-content" tabindex="-1">
+        <section class="screen active" id="hr-dashboard" data-role-screen="hr">
+          <div class="page-heading">
+            <div>
+              <span class="eyebrow">Monday, 24 August</span>
+              <h1>Good evening, Asha</h1>
+              <p>Three candidates need an HR decision after interview feedback.</p>
+            </div>
+            <button class="button secondary" type="button" data-target="hr-workflow">Manage workflow template</button>
+          </div>
+
+          <div class="stat-grid">
+            <article class="stat-card accent">
+              <span>Needs your decision</span>
+              <strong>3</strong>
+              <small>All feedback received</small>
+            </article>
+            <article class="stat-card">
+              <span>Feedback overdue</span>
+              <strong>2</strong>
+              <small>Past the 24-hour window</small>
+            </article>
+            <article class="stat-card">
+              <span>Interviews this week</span>
+              <strong>8</strong>
+              <small>Across 3 Postdoc roles</small>
+            </article>
+            <article class="stat-card">
+              <span>Pending scheduling</span>
+              <strong>4</strong>
+              <small>Ready to invite</small>
+            </article>
+          </div>
+
+          <div class="content-grid dashboard-grid">
+            <section class="panel">
+              <div class="panel-heading">
+                <div>
+                  <span class="eyebrow">Priority queue</span>
+                  <h2>Action required</h2>
+                </div>
+                <button class="text-button" type="button" data-target="hr-candidate">View all candidates →</button>
+              </div>
+
+              <div class="action-list">
+                <button class="action-row" type="button" data-target="hr-candidate">
+                  <span class="candidate-avatar teal">NK</span>
+                  <span class="action-main">
+                    <strong>Nandita Krishnan</strong>
+                    <small>Urban Climate Governance · School Lead Interview</small>
+                  </span>
+                  <span class="badge success">Ready for decision</span>
+                  <span class="row-arrow" aria-hidden="true">›</span>
+                </button>
+                <button class="action-row" type="button" data-target="hr-candidate">
+                  <span class="candidate-avatar gold">RS</span>
+                  <span class="action-main">
+                    <strong>Rahul Sen</strong>
+                    <small>Urban Climate Governance · Committee Interview</small>
+                  </span>
+                  <span class="badge warning">1 feedback overdue</span>
+                  <span class="row-arrow" aria-hidden="true">›</span>
+                </button>
+                <button class="action-row" type="button" data-target="hr-candidate">
+                  <span class="candidate-avatar rose">FM</span>
+                  <span class="action-main">
+                    <strong>Farah Mir</strong>
+                    <small>Migration & Labour · HR Interview</small>
+                  </span>
+                  <span class="badge neutral">Schedule interview</span>
+                  <span class="row-arrow" aria-hidden="true">›</span>
+                </button>
+              </div>
+            </section>
+
+            <aside class="panel timeline-panel">
+              <div class="panel-heading">
+                <div>
+                  <span class="eyebrow">Today</span>
+                  <h2>Interview calendar</h2>
+                </div>
+              </div>
+              <ol class="mini-timeline">
+                <li>
+                  <time>10:30</time>
+                  <div><strong>Nandita Krishnan</strong><span>School Lead · Google Meet</span></div>
+                </li>
+                <li>
+                  <time>14:00</time>
+                  <div><strong>Farah Mir</strong><span>HR Interview · Meeting room 2</span></div>
+                </li>
+                <li>
+                  <time>16:30</time>
+                  <div><strong>Karan Gulati</strong><span>Committee · Google Meet</span></div>
+                </li>
+              </ol>
+            </aside>
+          </div>
+        </section>
+
+        <section class="screen" id="hr-workflow" data-role-screen="hr">
+          <div class="breadcrumbs">
+            <button type="button" data-target="hr-dashboard">Overview</button><span>/</span><span>Urban Climate Governance</span>
+          </div>
+          <div class="page-heading compact">
+            <div>
+              <span class="eyebrow">Postdoctoral position · PD-2026-014</span>
+              <h1>Urban Climate Governance</h1>
+              <p>Configure who interviews shortlisted candidates and what happens next.</p>
+            </div>
+            <div class="heading-actions">
+              <button class="button secondary" type="button" data-action="save-workflow">Save draft</button>
+              <button class="button primary" type="button" data-action="publish-workflow">Publish workflow</button>
+            </div>
+          </div>
+
+          <div class="setup-summary">
+            <div>
+              <span class="summary-icon">HM</span>
+              <div><small>Hiring Manager</small><strong>Dr Meera Nair</strong></div>
+              <button class="text-button" type="button" data-action="prototype">Change</button>
+            </div>
+            <div>
+              <span class="summary-icon">12</span>
+              <div><small>Shortlisted candidates</small><strong>12 in workflow</strong></div>
+            </div>
+            <div>
+              <span class="summary-icon">3</span>
+              <div><small>Active rounds</small><strong id="round-count">3 configured</strong></div>
+            </div>
+          </div>
+
+          <div class="workflow-layout">
+            <section class="panel workflow-builder">
+              <div class="panel-heading">
+                <div>
+                  <span class="eyebrow">Interview plan</span>
+                  <h2>Rounds after shortlisting</h2>
+                </div>
+                <span class="autosave">● Changes saved locally</span>
+              </div>
+
+              <div class="start-node"><span>✓</span> Candidate shortlisted by HR</div>
+              <div class="round-list" id="round-list">
+                <article class="round-card" data-round="1">
+                  <div class="round-order">
+                    <button type="button" aria-label="Move School Lead Interview up" data-move="up">↑</button>
+                    <strong>1</strong>
+                    <button type="button" aria-label="Move School Lead Interview down" data-move="down">↓</button>
+                  </div>
+                  <div class="round-body">
+                    <div class="round-title-row">
+                      <div><span class="eyebrow">Round 1</span><h3 contenteditable="true">School Lead Interview</h3></div>
+                      <label class="toggle-label"><input type="checkbox" class="final-round"> Final round</label>
+                    </div>
+                    <div class="field-grid three">
+                      <label>Interview mode
+                        <select><option>Virtual</option><option>In-person</option><option>Decide per candidate</option></select>
+                      </label>
+                      <label>Duration
+                        <select><option>45 minutes</option><option>30 minutes</option><option>60 minutes</option></select>
+                      </label>
+                      <label>Feedback due
+                        <select><option>Within 24 hours</option><option>Within 48 hours</option></select>
+                      </label>
+                    </div>
+                    <div class="assignment-line">
+                      <span>Panelists</span>
+                      <span class="person-chip">MN · Dr Meera Nair <button type="button" aria-label="Remove Dr Meera Nair">×</button></span>
+                      <button class="chip-add" type="button" data-action="prototype">+ Add panelist</button>
+                    </div>
+                  </div>
+                  <button class="round-menu" type="button" aria-label="Round actions" data-action="prototype">•••</button>
+                </article>
+
+                <article class="round-card" data-round="2">
+                  <div class="round-order">
+                    <button type="button" aria-label="Move HR Interview up" data-move="up">↑</button>
+                    <strong>2</strong>
+                    <button type="button" aria-label="Move HR Interview down" data-move="down">↓</button>
+                  </div>
+                  <div class="round-body">
+                    <div class="round-title-row">
+                      <div><span class="eyebrow">Round 2</span><h3 contenteditable="true">HR Interview</h3></div>
+                      <label class="toggle-label"><input type="checkbox" class="final-round"> Final round</label>
+                    </div>
+                    <div class="field-grid three">
+                      <label>Interview mode
+                        <select><option>In-person</option><option>Virtual</option><option>Decide per candidate</option></select>
+                      </label>
+                      <label>Duration
+                        <select><option>30 minutes</option><option>45 minutes</option><option>60 minutes</option></select>
+                      </label>
+                      <label>Feedback due
+                        <select><option>Within 24 hours</option><option>Within 48 hours</option></select>
+                      </label>
+                    </div>
+                    <div class="assignment-line">
+                      <span>Panelists</span>
+                      <span class="person-chip">AM · Asha Menon <button type="button" aria-label="Remove Asha Menon">×</button></span>
+                      <button class="chip-add" type="button" data-action="prototype">+ Add panelist</button>
+                    </div>
+                  </div>
+                  <button class="round-menu" type="button" aria-label="Round actions" data-action="prototype">•••</button>
+                </article>
+
+                <article class="round-card final" data-round="3">
+                  <div class="round-order">
+                    <button type="button" aria-label="Move Postdoc Committee Interview up" data-move="up">↑</button>
+                    <strong>3</strong>
+                    <button type="button" aria-label="Move Postdoc Committee Interview down" data-move="down">↓</button>
+                  </div>
+                  <div class="round-body">
+                    <div class="round-title-row">
+                      <div><span class="eyebrow">Round 3</span><h3 contenteditable="true">Postdoc Committee Interview</h3></div>
+                      <label class="toggle-label"><input type="checkbox" class="final-round" checked> Final round</label>
+                    </div>
+                    <div class="field-grid three">
+                      <label>Interview mode
+                        <select><option>Virtual</option><option>In-person</option><option>Decide per candidate</option></select>
+                      </label>
+                      <label>Duration
+                        <select><option>60 minutes</option><option>45 minutes</option><option>90 minutes</option></select>
+                      </label>
+                      <label>Feedback due
+                        <select><option>Within 24 hours</option><option>Within 48 hours</option></select>
+                      </label>
+                    </div>
+                    <div class="assignment-line">
+                      <span>Panelists</span>
+                      <span class="person-chip">AK · Prof Arun Kumar <button type="button" aria-label="Remove Arun Kumar">×</button></span>
+                      <span class="person-chip">SD · Dr Sana D'Souza <button type="button" aria-label="Remove Sana D'Souza">×</button></span>
+                      <button class="chip-add" type="button" data-action="prototype">+ Add panelist</button>
+                    </div>
+                  </div>
+                  <button class="round-menu" type="button" aria-label="Round actions" data-action="prototype">•••</button>
+                </article>
+              </div>
+
+              <button class="add-round" id="add-round" type="button"><span>＋</span><strong>Add interview round</strong><small>Insert another stage before the final decision</small></button>
+              <div class="end-node"><span>⌑</span> HR releases contract letter</div>
+            </section>
+
+            <aside class="panel guide-card">
+              <span class="eyebrow">How it works</span>
+              <h2>A clear hand-off at every round</h2>
+              <ol>
+                <li><span>1</span><p><strong>HR schedules</strong>The candidate and assigned panelists receive the interview details.</p></li>
+                <li><span>2</span><p><strong>Panelists submit independently</strong>Feedback remains private from other panelists.</p></li>
+                <li><span>3</span><p><strong>HR decides</strong>Progress to the next round or reject and stop the process.</p></li>
+              </ol>
+              <div class="callout"><strong>Not in this prototype</strong><p>Availability matching, real Google Meet creation, recording, transcription, and Gmail forms.</p></div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="screen" id="hr-candidate" data-role-screen="hr">
+          <div class="breadcrumbs"><button type="button" data-target="hr-dashboard">Overview</button><span>/</span><span>Candidate review</span></div>
+          <div class="candidate-heading">
+            <span class="candidate-avatar large teal">NK</span>
+            <div>
+              <span class="eyebrow">Urban Climate Governance · School Lead Interview</span>
+              <h1>Nandita Krishnan</h1>
+              <div class="inline-meta"><span>Bengaluru</span><span>8 years experience</span><span>Application PD-1842</span></div>
+            </div>
+            <div class="heading-actions">
+              <button class="button secondary" type="button" data-action="open-schedule">Edit schedule</button>
+              <button class="button danger-outline" type="button" data-action="reject-candidate">Reject</button>
+              <button class="button primary" type="button" data-action="advance-candidate">Progress to HR Interview</button>
+            </div>
+          </div>
+
+          <div class="progress-strip" aria-label="Candidate interview progress">
+            <div class="complete"><span>✓</span><strong>Shortlisted</strong><small>18 Aug</small></div>
+            <div class="current"><span>1</span><strong>School Lead</strong><small>Decision ready</small></div>
+            <div><span>2</span><strong>HR Interview</strong><small>Not started</small></div>
+            <div><span>3</span><strong>Committee</strong><small>Not started</small></div>
+            <div><span>4</span><strong>Contract</strong><small>Not started</small></div>
+          </div>
+
+          <div class="candidate-layout">
+            <div class="candidate-main">
+              <section class="panel interview-card">
+                <div class="panel-heading">
+                  <div><span class="eyebrow">Current round</span><h2>School Lead Interview</h2></div>
+                  <span class="badge success">All feedback received</span>
+                </div>
+                <div class="interview-facts">
+                  <div><small>Date & time</small><strong>24 Aug, 10:30–11:15</strong></div>
+                  <div><small>Mode</small><strong>Virtual · Google Meet</strong></div>
+                  <div><small>Panelists</small><strong>2 of 2 submitted</strong></div>
+                </div>
+                <a class="meeting-link" href="#" data-action="prototype">meet.google.com/iihs-demo-link <span>Copy</span></a>
+              </section>
+
+              <section class="panel feedback-consolidated">
+                <div class="panel-heading">
+                  <div><span class="eyebrow">Private to HR</span><h2>Consolidated feedback</h2></div>
+                  <span class="score-pill">4.2 / 5 average</span>
+                </div>
+                <div class="score-bars" aria-label="Average competency ratings">
+                  <div><span>Motivation</span><i style="--score: 80%"></i><strong>4.0</strong></div>
+                  <div><span>Relevant experience</span><i style="--score: 90%"></i><strong>4.5</strong></div>
+                  <div><span>Domain knowledge</span><i style="--score: 80%"></i><strong>4.0</strong></div>
+                  <div><span>Communication</span><i style="--score: 90%"></i><strong>4.5</strong></div>
+                  <div><span>Independent & team work</span><i style="--score: 80%"></i><strong>4.0</strong></div>
+                  <div><span>Professional demeanour</span><i style="--score: 80%"></i><strong>4.0</strong></div>
+                </div>
+
+                <div class="feedback-tabs" role="tablist" aria-label="Panelist feedback">
+                  <button class="active" type="button" role="tab" data-feedback-tab="meera">Dr Meera Nair <span class="badge success">Progress</span></button>
+                  <button type="button" role="tab" data-feedback-tab="vikram">Dr Vikram Shah <span class="badge neutral">Discuss</span></button>
+                </div>
+                <article class="feedback-detail active" data-feedback-panel="meera">
+                  <div class="quote-grid">
+                    <div><small>Capability & role readiness</small><p>Strong command of climate-governance research and clear examples of turning field evidence into policy recommendations.</p></div>
+                    <div><small>Collaboration & adaptability</small><p>Handled challenges thoughtfully and described productive work across government, community, and academic teams.</p></div>
+                    <div><small>Strengths, risks & IIHS environment</small><p>Strong facilitator and writer. Would benefit from clearer prioritisation when several workstreams compete.</p></div>
+                  </div>
+                  <footer>Submitted 24 Aug at 14:08 · within 24 hours</footer>
+                </article>
+                <article class="feedback-detail" data-feedback-panel="vikram">
+                  <div class="quote-grid">
+                    <div><small>Capability & role readiness</small><p>Relevant experience is strong; probe further on quantitative research ownership in the committee round.</p></div>
+                    <div><small>Collaboration & adaptability</small><p>Examples suggest good stakeholder judgement and comfort working across disciplines.</p></div>
+                    <div><small>Strengths, risks & IIHS environment</small><p>Thoughtful and grounded. Recommend discussion on the balance between research delivery and convening responsibilities.</p></div>
+                  </div>
+                  <footer>Submitted 24 Aug at 16:42 · within 24 hours</footer>
+                </article>
+              </section>
+            </div>
+
+            <aside class="candidate-aside">
+              <section class="panel profile-card">
+                <div class="panel-heading"><h2>Candidate profile</h2></div>
+                <dl>
+                  <div><dt>Email</dt><dd>nandita.k@example.test</dd></div>
+                  <div><dt>Current role</dt><dd>Senior Research Associate</dd></div>
+                  <div><dt>Highest degree</dt><dd>PhD, Public Policy</dd></div>
+                </dl>
+                <div class="document-list">
+                  <a href="#" data-action="prototype"><span>PDF</span><div><strong>Curriculum vitae</strong><small>1.8 MB</small></div><b>↗</b></a>
+                  <a href="#" data-action="prototype"><span>PDF</span><div><strong>Cover letter</strong><small>620 KB</small></div><b>↗</b></a>
+                  <a href="#" data-action="prototype"><span>URL</span><div><strong>Research portfolio</strong><small>External link</small></div><b>↗</b></a>
+                </div>
+              </section>
+              <section class="panel audit-card">
+                <span class="eyebrow">Access</span>
+                <h2>Who can see this?</h2>
+                <p>HR sees all feedback. Each assigned interviewer sees the candidate profile and only their own submission.</p>
+              </section>
+            </aside>
+          </div>
+        </section>
+
+        <section class="screen" id="manager-dashboard" data-role-screen="manager">
+          <div class="page-heading">
+            <div><span class="eyebrow">Hiring Manager workspace</span><h1>Your Postdoc roles</h1><p>Review only the jobs and shortlisted candidates assigned to you.</p></div>
+          </div>
+          <div class="notice-banner"><span>2</span><p><strong>Two recommendations need your attention.</strong> HR will make the formal progress or rejection decision.</p></div>
+          <div class="job-card-grid">
+            <article class="job-card featured">
+              <div class="job-card-top"><span class="badge success">Open interviews</span><button type="button" aria-label="More job actions" data-action="prototype">•••</button></div>
+              <span class="eyebrow">PD-2026-014 · School of Environment</span>
+              <h2>Urban Climate Governance</h2>
+              <div class="job-metrics"><div><strong>6</strong><span>In interviews</span></div><div><strong>2</strong><span>Need action</span></div><div><strong>3</strong><span>Rounds</span></div></div>
+              <button class="button primary full" type="button" data-target="manager-candidate">Review candidates</button>
+            </article>
+            <article class="job-card">
+              <div class="job-card-top"><span class="badge neutral">No action due</span><button type="button" aria-label="More job actions" data-action="prototype">•••</button></div>
+              <span class="eyebrow">PD-2026-009 · School of Human Development</span>
+              <h2>Migration, Labour & Urban Change</h2>
+              <div class="job-metrics"><div><strong>3</strong><span>In interviews</span></div><div><strong>0</strong><span>Need action</span></div><div><strong>3</strong><span>Rounds</span></div></div>
+              <button class="button secondary full" type="button" data-action="prototype">View candidates</button>
+            </article>
+          </div>
+          <section class="panel">
+            <div class="panel-heading"><div><span class="eyebrow">Urban Climate Governance</span><h2>Needs your recommendation</h2></div></div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Candidate</th><th>Current stage</th><th>Interview</th><th>Action</th></tr></thead>
+                <tbody>
+                  <tr><td><div class="table-person"><span class="candidate-avatar teal">NK</span><div><strong>Nandita Krishnan</strong><small>8 years · Bengaluru</small></div></div></td><td><span class="badge warning">School Lead review</span></td><td>Today, 10:30</td><td><button class="text-button" type="button" data-target="manager-candidate">Review candidate →</button></td></tr>
+                  <tr><td><div class="table-person"><span class="candidate-avatar gold">RS</span><div><strong>Rahul Sen</strong><small>11 years · New Delhi</small></div></div></td><td><span class="badge neutral">Committee scheduled</span></td><td>27 Aug, 15:00</td><td><button class="text-button" type="button" data-action="prototype">View profile →</button></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </section>
+
+        <section class="screen" id="manager-candidate" data-role-screen="manager">
+          <div class="breadcrumbs"><button type="button" data-target="manager-dashboard">My jobs</button><span>/</span><span>Urban Climate Governance</span><span>/</span><span>Nandita Krishnan</span></div>
+          <div class="candidate-heading">
+            <span class="candidate-avatar large teal">NK</span>
+            <div><span class="eyebrow">School Lead Interview · Recommendation due today</span><h1>Nandita Krishnan</h1><div class="inline-meta"><span>8 years experience</span><span>PhD, Public Policy</span></div></div>
+            <div class="heading-actions"><button class="button secondary" type="button" data-action="prototype">Open CV</button><button class="button secondary" type="button" data-action="prototype">Open application</button></div>
+          </div>
+          <div class="manager-layout">
+            <section class="panel profile-summary">
+              <span class="eyebrow">Application snapshot</span>
+              <h2>Why Nandita applied</h2>
+              <p>“My work has focused on how city governments translate climate commitments into implementable programmes. This role brings together research, practice, and institutional collaboration in exactly the way I hope to contribute.”</p>
+              <div class="experience-list">
+                <div><span>2021–now</span><p><strong>Senior Research Associate</strong>Centre for Policy Futures</p></div>
+                <div><span>2018–21</span><p><strong>Research Fellow</strong>Urban Systems Lab</p></div>
+              </div>
+              <div class="document-actions"><button class="button secondary" type="button" data-action="prototype">Curriculum vitae ↗</button><button class="button secondary" type="button" data-action="prototype">Cover letter ↗</button><button class="button secondary" type="button" data-action="prototype">Portfolio ↗</button></div>
+            </section>
+            <aside class="panel recommendation-card">
+              <span class="eyebrow">Hiring Manager action</span>
+              <h2>Your recommendation</h2>
+              <p>HR will use this recommendation alongside independent panel feedback.</p>
+              <div class="choice-stack" role="radiogroup" aria-label="Hiring Manager recommendation">
+                <label><input type="radio" name="manager-recommendation" value="progress"><span><strong>Recommend progress</strong><small>Move to the next configured round</small></span></label>
+                <label><input type="radio" name="manager-recommendation" value="discuss"><span><strong>Needs discussion</strong><small>Flag questions for HR review</small></span></label>
+                <label><input type="radio" name="manager-recommendation" value="stop"><span><strong>Do not progress</strong><small>Recommend ending the process</small></span></label>
+              </div>
+              <label class="field-label">Rationale for HR
+                <textarea rows="5" placeholder="Capture the evidence behind your recommendation…"></textarea>
+              </label>
+              <button class="button primary full" type="button" data-action="submit-recommendation">Send recommendation to HR</button>
+            </aside>
+          </div>
+        </section>
+
+        <section class="screen" id="panel-dashboard" data-role-screen="panelist">
+          <div class="page-heading">
+            <div><span class="eyebrow">Panelist workspace</span><h1>Your feedback tasks</h1><p>You can access only the candidates and interviews assigned to you.</p></div>
+          </div>
+          <div class="feedback-deadline-banner"><span>24h</span><div><strong>Submit feedback within 24 hours of each interview</strong><p>Your feedback remains private from other interviewers and is visible to HR.</p></div></div>
+          <div class="task-columns">
+            <section>
+              <div class="section-title"><div><span class="eyebrow">Action required</span><h2>Feedback due</h2></div><span class="count-circle">2</span></div>
+              <article class="feedback-task urgent">
+                <div class="task-top"><span class="badge warning">Due in 4 hours</span><span>Interviewed today, 10:30</span></div>
+                <div class="task-person"><span class="candidate-avatar large teal">NK</span><div><span class="eyebrow">Urban Climate Governance</span><h3>Nandita Krishnan</h3><p>School Lead Interview · Virtual</p></div></div>
+                <div class="task-actions"><button class="button secondary" type="button" data-action="prototype">View profile</button><button class="button primary" type="button" data-target="panel-feedback">Complete feedback</button></div>
+              </article>
+              <article class="feedback-task">
+                <div class="task-top"><span class="badge neutral">Due tomorrow, 15:00</span><span>Interviewed today, 15:00</span></div>
+                <div class="task-person"><span class="candidate-avatar gold">RS</span><div><span class="eyebrow">Urban Climate Governance</span><h3>Rahul Sen</h3><p>Committee Interview · Virtual</p></div></div>
+                <div class="task-actions"><button class="button secondary" type="button" data-action="prototype">View profile</button><button class="button secondary" type="button" data-action="prototype">Complete feedback</button></div>
+              </article>
+            </section>
+            <section>
+              <div class="section-title"><div><span class="eyebrow">Reference</span><h2>Upcoming interviews</h2></div></div>
+              <article class="upcoming-card"><time><strong>27</strong><span>Aug</span></time><div><strong>Karan Gulati</strong><span>Postdoc Committee · 15:30</span><small>Urban Climate Governance</small></div><button type="button" data-action="prototype">View details</button></article>
+              <article class="upcoming-card"><time><strong>29</strong><span>Aug</span></time><div><strong>Farah Mir</strong><span>School Lead · 11:00</span><small>Migration, Labour & Urban Change</small></div><button type="button" data-action="prototype">View details</button></article>
+            </section>
+          </div>
+        </section>
+
+        <section class="screen" id="panel-feedback" data-role-screen="panelist">
+          <div class="breadcrumbs"><button type="button" data-target="panel-dashboard">My feedback</button><span>/</span><span>Nandita Krishnan</span></div>
+          <div class="feedback-form-heading">
+            <div class="task-person"><span class="candidate-avatar large teal">NK</span><div><span class="eyebrow">Urban Climate Governance · School Lead Interview</span><h1>Evaluate Nandita Krishnan</h1><div class="inline-meta"><span>Interviewed today, 10:30</span><span class="deadline-text">Due today, 22:30</span></div></div></div>
+            <div class="heading-actions"><button class="button secondary" type="button" data-action="prototype">View application</button><button class="button secondary" type="button" data-action="prototype">Open CV</button></div>
+          </div>
+
+          <form class="evaluation-form" id="evaluation-form">
+            <section class="panel form-section">
+              <div class="form-section-heading"><span>1</span><div><h2>Core assessment</h2><p>Rate each area from 1 (low) to 5 (high). Choose the score best supported by the interview.</p></div><small><b id="rated-count">0</b>/6 rated</small></div>
+              <div class="rubric-legend"><span>1 · Low</span><span>2 · Limited</span><span>3 · Good</span><span>4 · Very good</span><span>5 · Strong match</span></div>
+              <div class="rating-list">
+                <fieldset class="rating-row"><legend><strong>Motivation for the position</strong><small>Clarity and substance of reasons for applying</small></legend><div class="rating-options" data-rating-group="motivation"></div></fieldset>
+                <fieldset class="rating-row"><legend><strong>Relevant experience</strong><small>Depth and breadth of previous experience</small></legend><div class="rating-options" data-rating-group="experience"></div></fieldset>
+                <fieldset class="rating-row"><legend><strong>Domain knowledge</strong><small>Understanding relevant to the role</small></legend><div class="rating-options" data-rating-group="domain"></div></fieldset>
+                <fieldset class="rating-row"><legend><strong>Communication</strong><small>Clarity, listening, and interpersonal effectiveness</small></legend><div class="rating-options" data-rating-group="communication"></div></fieldset>
+                <fieldset class="rating-row"><legend><strong>Independent and team work</strong><small>Ability to take ownership and collaborate</small></legend><div class="rating-options" data-rating-group="teamwork"></div></fieldset>
+                <fieldset class="rating-row"><legend><strong>Professional demeanour</strong><small>Judgement, preparation, and conduct</small></legend><div class="rating-options" data-rating-group="demeanour"></div></fieldset>
+              </div>
+            </section>
+
+            <section class="panel form-section">
+              <div class="form-section-heading"><span>2</span><div><h2>Evidence from the interview</h2><p>Three focused prompts replace the five long narrative questions in the original form.</p></div></div>
+              <div class="prompt-grid">
+                <label><strong>Capability and role readiness</strong><small>How well can the candidate learn, apply information, and execute the role?</small><textarea name="capability" rows="5" placeholder="Capture specific evidence or examples…"></textarea></label>
+                <label><strong>Collaboration and adaptability</strong><small>How effectively can the candidate work across changing contexts and stakeholders?</small><textarea name="collaboration" rows="5" placeholder="Capture specific evidence or examples…"></textarea></label>
+                <label class="wide"><strong>Strengths, risks, and alignment with the IIHS working environment</strong><small>What would help this candidate succeed, and what should the next interviewer probe?</small><textarea name="strengths" rows="4" placeholder="Summarise strengths, reservations, and follow-up questions…"></textarea></label>
+              </div>
+            </section>
+
+            <section class="panel form-section">
+              <div class="form-section-heading"><span>3</span><div><h2>Overall recommendation</h2><p>Your recommendation is independent and will be visible only to HR.</p></div></div>
+              <fieldset class="overall-score"><legend>Overall assessment</legend><div class="overall-options" data-rating-group="overall" data-labeled="true"></div></fieldset>
+              <fieldset class="recommendation-options"><legend>What should happen next?</legend>
+                <label><input type="radio" name="panel-recommendation" value="progress"><span class="choice-icon progress">↑</span><span><strong>Progress</strong><small>Recommend the next configured round</small></span></label>
+                <label><input type="radio" name="panel-recommendation" value="discuss"><span class="choice-icon discuss">…</span><span><strong>Needs discussion</strong><small>HR should review specific questions</small></span></label>
+                <label><input type="radio" name="panel-recommendation" value="stop"><span class="choice-icon stop">×</span><span><strong>Do not progress</strong><small>Recommend ending the process</small></span></label>
+              </fieldset>
+              <div class="privacy-note"><span>◉</span><p><strong>Your feedback is independent.</strong> Other panelists cannot see it. Once submitted, it becomes read-only and is available to HR for the round decision.</p></div>
+            </section>
+
+            <div class="form-actions">
+              <span id="draft-status">Draft saved locally at 19:18</span>
+              <button class="button secondary" type="button" data-action="save-feedback">Save draft</button>
+              <button class="button primary" type="submit">Submit feedback to HR</button>
+            </div>
+          </form>
+        </section>
+      </main>
+    </div>
+
+    <dialog id="schedule-dialog">
+      <form method="dialog" class="dialog-card">
+        <div class="dialog-heading"><div><span class="eyebrow">School Lead Interview</span><h2>Schedule Nandita Krishnan</h2></div><button type="submit" value="cancel" aria-label="Close">×</button></div>
+        <div class="field-grid two">
+          <label>Date<input type="date" value="2026-08-24"></label>
+          <label>Start time<input type="time" value="10:30"></label>
+          <label>Interview mode<select id="schedule-mode"><option>Virtual</option><option>In-person</option></select></label>
+          <label>Duration<select><option>45 minutes</option><option>30 minutes</option><option>60 minutes</option></select></label>
+        </div>
+        <div class="meet-preview"><span>G</span><div><strong>Google Meet link</strong><small>Will be generated when this schedule is saved</small></div><span class="badge neutral">Simulation</span></div>
+        <label class="field-label">Message to candidate<textarea rows="3">We look forward to speaking with you about the Postdoctoral position in Urban Climate Governance.</textarea></label>
+        <div class="dialog-actions"><button class="button secondary" type="submit" value="cancel">Cancel</button><button class="button primary" type="submit" value="save" data-action="save-schedule">Save & send invitation</button></div>
+      </form>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"><span>✓</span><p><strong id="toast-title">Saved</strong><small id="toast-copy">Prototype action completed.</small></p></div>
+  </body>
+</html>
