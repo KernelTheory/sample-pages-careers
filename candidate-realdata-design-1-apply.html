@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IIHS Careers · Design 1 · Application flow</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      :root{--brand:#881803;--brand2:#de5a2a;--soft:#fef7f3;--ink:#0f172a;--text:#334155;--muted:#64748b;--line:#e2e8f0;--bg:#f8fafc;--card:#fff;--green:#047857;--amber:#b45309;--red:#b91c1c;--blue:#1d4ed8}
+      *{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#fff 0%,var(--bg) 42%,#fff 100%);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:0}a{text-decoration:none;color:inherit}.wrap{max-width:1360px;min-width:1180px;margin:0 auto;padding:24px 28px}.top{display:flex;justify-content:space-between;align-items:center;border:1px solid var(--line);background:#fffffff0;border-radius:12px;padding:14px 16px;box-shadow:0 18px 55px #0f172a12;position:sticky;top:16px;z-index:5}.brand{display:flex;align-items:center;gap:12px}.brand strong{display:block}.brand span{display:block;color:var(--muted);font-size:12px;margin-top:2px}.nav{display:flex;gap:8px}.nav a,.pill{display:inline-flex;align-items:center;justify-content:center;height:34px;border-radius:999px;border:1px solid var(--line);background:white;padding:0 12px;font-size:12px;font-weight:800;color:var(--text)}.nav a.active,.pill.hot{background:var(--soft);border-color:#fbd5bf;color:var(--brand)}
+      .crumbs{display:flex;gap:8px;align-items:center;padding:22px 0 6px;color:var(--muted);font-size:13px}.crumbs a{color:var(--brand);font-weight:650}
+      .flowhead{display:grid;grid-template-columns:1fr 360px;gap:22px;align-items:end;padding:6px 0 24px}.eyebrow{color:var(--brand);font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.08em}h1{font-size:40px;line-height:1.04;margin:10px 0 0;max-width:760px;font-weight:650}.flowhead p{font-size:15px;line-height:1.6;color:var(--text);max-width:720px}.summary{border:1px solid var(--line);border-radius:10px;background:white;padding:18px;box-shadow:0 10px 30px rgba(15,23,42,.06)}.summary h2{font-size:18px;margin:0 0 12px}.summary div{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding:10px 0;color:var(--muted);font-size:13px}.summary div:last-child{border:0}.summary strong{color:var(--ink)}
+      .flow{display:grid;grid-template-columns:240px 1fr;gap:18px;align-items:start}.rail{position:sticky;top:104px;border:1px solid var(--line);border-radius:10px;background:white;padding:12px;box-shadow:0 10px 30px rgba(15,23,42,.06)}.rail a{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:center;padding:10px;border-radius:8px;color:var(--text);font-size:13px;font-weight:650}.rail a.active{background:var(--soft);color:var(--brand)}.num{display:grid;place-items:center;width:28px;height:28px;border-radius:8px;background:#f1f5f9;color:var(--muted);font-size:12px;font-weight:700}.active .num{background:var(--brand);color:white}
+      .sections{display:grid;gap:18px}.section{border:1px solid var(--line);border-radius:12px;background:white;box-shadow:0 10px 30px rgba(15,23,42,.06);overflow:hidden}.section-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;padding:20px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#fff,#fbfcfd)}.section-title{display:flex;gap:12px;align-items:flex-start}.section-num{display:grid;place-items:center;flex:0 0 auto;width:34px;height:34px;border-radius:10px;font-weight:700;background:var(--brand);color:white}.section h2{margin:0;font-size:22px;font-weight:650}.section-head p{margin:6px 0 0;color:var(--muted);font-size:13px;line-height:1.45}
+      .btn{display:inline-flex;align-items:center;justify-content:center;min-height:38px;border-radius:9px;border:1px solid transparent;padding:0 13px;font-size:13px;font-weight:650;cursor:pointer}.primary{background:var(--brand);color:white;font-weight:400}.secondary{background:white;border-color:var(--line);color:var(--text)}.ghost{background:var(--soft);border-color:#fbd5bf;color:var(--brand)}.btn:disabled{opacity:.5;cursor:not-allowed}
+      .detail{display:grid;grid-template-columns:1.35fr .75fr;gap:16px;padding:18px}.detail-card,.side-card{border:1px solid var(--line);border-radius:10px;background:white;padding:18px}.detail-card h3{font-size:24px;margin:0;color:var(--brand);font-weight:650;line-height:1.2}.detail-card .meta{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0 4px}.detail-card h4{margin:16px 0 6px;font-size:14px}.detail-card p,.detail-card li{color:var(--text);line-height:1.6;font-size:14px}.detail-card ul{display:grid;gap:7px;margin:8px 0 0;padding-left:20px}.side-card h4{margin:0 0 12px;font-size:15px}.side-card .srow{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:10px 0;color:var(--muted);font-size:13px;align-items:center}.side-card .srow:last-child{border:0}.side-card strong{color:var(--ink)}
+      .tag{display:inline-flex;align-items:center;min-height:24px;border:1px solid var(--line);border-radius:999px;background:#f8fafc;color:var(--muted);padding:0 8px;font-size:11px;font-weight:600}.tag.realtag{background:#ecfdf5;border-color:#a7f3d0;color:#047857}.tag.amber{background:#fffbeb;border-color:#fde68a;color:#92400e}
+      .addgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;padding:18px}.addjob{border:1px solid var(--line);border-radius:10px;background:white;padding:15px;display:flex;flex-direction:column;gap:8px}.addjob.in{border-color:#f7b896;background:#fffaf8}.addjob h3{margin:0;font-size:15px;font-weight:650}.addjob p{margin:0;color:var(--muted);font-size:12px;line-height:1.45}.addjob .arow{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:6px}
+      .rank-list{display:grid;gap:10px;padding:18px}.rank-row{display:grid;grid-template-columns:50px 1fr 150px;gap:12px;align-items:center;border:1px solid var(--line);border-radius:10px;background:white;padding:12px}.rank{display:grid;place-items:center;width:38px;height:38px;border-radius:10px;background:var(--brand);color:white;font-size:16px;font-weight:700}.rank-row:nth-child(2) .rank{background:#a0461f}.rank-row:nth-child(3) .rank{background:var(--brand2)}.rank-row h3{margin:0;font-size:15px;font-weight:650}.rank-row p{margin:4px 0 0;color:var(--muted);font-size:12px}.rank-ctrls{display:flex;gap:6px;justify-content:flex-end}.lock{margin:0 18px 18px;border:1px solid #fed7aa;border-radius:9px;background:#fff7ed;color:#9a3412;padding:11px;font-size:13px;font-weight:650}
+      .upload-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:18px}.drop{display:grid;place-items:center;min-height:210px;border:2px dashed #cbd5e1;border-radius:10px;background:#f8fafc;text-align:center;padding:22px}.drop b{display:block;font-size:18px}.drop span{display:block;margin-top:8px;color:var(--muted);font-size:13px}.review{display:grid;gap:10px;align-content:start}.flag{display:flex;justify-content:space-between;gap:12px;border:1px solid #fde68a;background:#fffbeb;color:#78350f;border-radius:9px;padding:13px;font-size:13px}.flag.ok{border-color:#a7f3d0;background:#ecfdf5;color:#065f46}
+      .steps{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;padding:18px}.step{border:1px solid var(--line);border-radius:9px;background:white;min-height:96px;padding:12px}.step.active{background:var(--soft);border-color:#fbd5bf}.step b{display:grid;place-items:center;width:28px;height:28px;border-radius:8px;background:#f1f5f9;color:var(--muted);font-size:12px;font-weight:700}.step.active b{background:var(--brand);color:white}.step h3{margin:10px 0 4px;font-size:13px;font-weight:650}.step p{margin:0;color:var(--muted);font-size:11px;line-height:1.4}
+      .apps{display:grid;gap:10px;padding:18px}.appcard{border:1px solid var(--line);border-radius:10px;padding:14px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center}.appcard h4{margin:0 0 4px;font-size:14px;font-weight:650}.appcard p{margin:0;color:var(--muted);font-size:12px}
+      .status{display:flex;gap:8px;padding:0 18px 14px;flex-wrap:wrap}.chip{border-radius:999px;padding:7px 10px;font-size:11px;font-weight:600}.registered{background:#eef2ff;color:#3730a3}.progress{background:#eff6ff;color:#1d4ed8}.submitted{background:#ecfdf5;color:#047857}.shortlisted{background:#fef3c7;color:#92400e}.rejected{background:#fef2f2;color:#b91c1c}
+      .emails{display:grid;gap:10px;padding:0 18px 18px}.email{border:1px solid var(--line);border-radius:10px;overflow:hidden}.email .ehead{display:flex;justify-content:space-between;background:#f8fafc;padding:10px 13px;font-size:12px;border-bottom:1px solid var(--line)}.email .ebody{padding:13px;font-size:13px;color:var(--text);line-height:1.55}
+      .toast{position:fixed;right:24px;bottom:24px;width:330px;border:1px solid #bbf7d0;background:#f0fdf4;color:#14532d;border-radius:10px;box-shadow:0 18px 55px #0f172a2a;padding:14px;display:none}.toast.show{display:block}.toast strong{display:block;font-size:13px}.toast span{font-size:12px}
+:root{--iihs-body-font:'Open Sans',Arial,sans-serif;--iihs-heading-font:'Montserrat','Open Sans',Arial,sans-serif}
+body,input,select,textarea,button,p,li,td,th,a,span,small,.btn,.pill,.tag,.chip{font-family:var(--iihs-body-font)!important;font-weight:400!important;letter-spacing:0!important}
+h1,h2,h3,h4,h5,h6,.brand strong,.section h2,.detail-card h3{font-family:var(--iihs-heading-font)!important;font-weight:400!important;letter-spacing:0!important}
+strong,b,.rank,.num,.section-num,.tag{font-family:var(--iihs-body-font)!important;font-weight:600!important;letter-spacing:0!important}
+.nav a{font-family:var(--iihs-body-font)!important;font-weight:800!important;letter-spacing:1px!important}
+.btn.primary,.primary{font-weight:400!important}
+      .logo-img{display:block;width:54px;height:auto;max-height:42px;object-fit:contain;flex:0 0 auto}
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="top">
+        <a class="brand" href="candidate-realdata-design-1.html"><img class="logo-img" src="iihs-co-in-logo.jpg" alt="IIHS logo"><span><strong>IIHS Careers</strong><span>Design Set 1 · Page 2 of 2 · Application flow</span></span></a>
+        <nav class="nav"><a href="candidate-realdata-design-1.html">Open Jobs</a><a class="active" href="#step1">Apply</a><a href="#step5">Dashboard</a></nav>
+        <span class="pill hot">Email + OTP verified</span>
+      </header>
+
+      <div class="crumbs"><a href="candidate-realdata-design-1.html">Open positions (50)</a> ›<span>Application</span></div>
+
+      <section class="flowhead">
+        <div><span class="eyebrow">Screens 2–6 · Application process</span><h1 id="flowH1">Apply to your selected position</h1><p>You came here from the job board. This single application carries up to <b>3 ranked preferences</b>, one shared resume and one shared form. Move through the steps in the rail on the left.</p></div>
+        <aside class="summary"><h2>Current application</h2><div><span>Primary JD</span><strong id="sumPrimary">—</strong></div><div><span>Preferences</span><strong id="sumCount">1 / 3</strong></div><div><span>Application ID</span><strong>IIHS-2026-04821</strong></div><div><span>Next action</span><strong id="sumNext">Confirm order</strong></div></aside>
+      </section>
+
+      <div class="flow">
+        <aside class="rail" id="rail">
+          <a href="#step1"><span class="num">1</span>Review the JD</a>
+          <a href="#step2"><span class="num">2</span>Add up to 2 more</a>
+          <a href="#step3"><span class="num">3</span>Confirm order</a>
+          <a href="#step4"><span class="num">4</span>Upload resume</a>
+          <a href="#step5"><span class="num">5</span>Shared form &amp; status</a>
+        </aside>
+        <div class="sections">
+
+          <!-- STEP 1: JD DETAIL -->
+          <section id="step1" class="section">
+            <div class="section-head"><span class="section-title"><span class="section-num">1</span><span><h2>Read the full job description</h2><p>This is the real IIHS JD you opened from the board. Clicking Apply makes it preference&nbsp;1.</p></span></span><a class="btn primary" href="#step2" id="applyBtn">Apply — set as preference 1</a></div>
+            <div class="detail">
+              <article class="detail-card" id="jdDetail"></article>
+              <aside class="side-card"><h4>Your preferences (max 3)</h4><div id="prefMini"></div><p style="color:var(--muted);font-size:12px;margin:14px 0 0">One application is submitted against every preference you add.</p></aside>
+            </div>
+          </section>
+
+          <!-- STEP 2: ADD MORE -->
+          <section id="step2" class="section">
+            <div class="section-head"><span class="section-title"><span class="section-num">2</span><span><h2>Add up to two more roles to the same application</h2><p>IIHS has four announced roles. Add the ones you also want considered for — your primary stays at preference&nbsp;1.</p></span></span><span class="pill hot" id="selPill">1 / 3 selected</span></div>
+            <div class="addgrid" id="addGrid"></div>
+          </section>
+
+          <!-- STEP 3: CONFIRM ORDER -->
+          <section id="step3" class="section">
+            <div class="section-head"><span class="section-title"><span class="section-num">3</span><span><h2>Confirm your preference order</h2><p>This is exactly what recruiters will see. The order locks after final submission.</p></span></span><a class="btn primary" href="#step4">Confirm order →</a></div>
+            <div class="rank-list" id="rankList"></div>
+            <p class="lock">Maximum 3 preferences per application. Reorder before confirming — the ranked order is locked once you submit.</p>
+          </section>
+
+          <!-- STEP 4: RESUME -->
+          <section id="step4" class="section">
+            <div class="section-head"><span class="section-title"><span class="section-num">4</span><span><h2>Upload resume and resolve extraction flags</h2><p>PDF / DOC / DOCX · maximum 5MB. Parsing pre-fills the shared form so you don't re-type.</p></span></span><span class="pill">Draft autosaved</span></div>
+            <div class="upload-grid">
+              <div class="drop"><span><b>Drop resume or choose file</b><span>e.g. Priya_Nair_Finance_CV.pdf — parsing fills personal, education and work-experience fields.</span></span></div>
+              <div class="review">
+                <div class="flag"><span><b>Needs review:</b> Current employer confidence low.</span><span>68%</span></div>
+                <div class="flag"><span><b>Needs review:</b> Education end date missing.</span><span>Fix</span></div>
+                <div class="flag ok"><span><b>Looks good:</b> Email, phone and 4 yrs 7 mo experience detected.</span><span>✓</span></div>
+              </div>
+            </div>
+            <div style="padding:0 18px 18px"><a class="btn primary" href="#step5">Continue to the form →</a></div>
+          </section>
+
+          <!-- STEP 5: SHARED FORM + DASHBOARD -->
+          <section id="step5" class="section">
+            <div class="section-head"><span class="section-title"><span class="section-num">5</span><span><h2>One shared form, then track every preference</h2><p>Fill the six steps once; it is submitted against all your preferences. After submitting you track status and emails here.</p></span></span><button class="btn primary" id="submitBtn">Submit application →</button></div>
+            <div class="steps">
+              <article class="step active"><b>1</b><h3>Resume</h3><p>Confirm extraction.</p></article>
+              <article class="step"><b>2</b><h3>Personal</h3><p>Contact &amp; details.</p></article>
+              <article class="step"><b>3</b><h3>Education</h3><p>Qualifications.</p></article>
+              <article class="step"><b>4</b><h3>Work Experience</h3><p>Roles &amp; projects.</p></article>
+              <article class="step"><b>5</b><h3>Documents</h3><p>Cover letter, references.</p></article>
+              <article class="step"><b>6</b><h3>Declaration</h3><p>Consent &amp; submit.</p></article>
+            </div>
+            <div class="status"><span class="chip registered">Registered</span><span class="chip progress">In-Progress</span><span class="chip submitted">Submitted</span><span class="chip shortlisted">Shortlisted</span><span class="chip rejected">Rejected</span></div>
+            <div class="apps" id="appCards"></div>
+            <div class="emails">
+              <div class="email"><div class="ehead"><span><b>Application received</b> · careers@iihs.co.in</span><span>just now</span></div><div class="ebody" id="emailBody">Dear Candidate, we have received your application. Your application ID is <b>IIHS-2026-04821</b>. We will be in touch about next steps.</div></div>
+              <div class="email"><div class="ehead"><span><b>Shortlisting update</b> · careers@iihs.co.in</span><span>5 days later</span></div><div class="ebody">Submission and rejection notifications use this same email channel, one update per preference as recruiters review your application.</div></div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </div>
+    <aside class="toast" id="toast"><strong id="toastT">Preference added</strong><span id="toastS"></span></aside>
+
+    <script>
+      // ---- Full real JD content for the 4 IIHS roles ----
+      const REAL={
+        finance:{about:"Based in Bengaluru, this role is involved in a range of Finance and Accounting activities of IIHS operations. The search remains open until the position is filled.",resp:["Making cost centre-wise entries in the accounting software; handling bills receivable and payable","Revenue recognition as per accounting standards; fixed assets accounting; cash and bank maintenance","Tracking statutory remittances and filing; controlling all expenditure; assisting internal & statutory audits","Payroll processing; reporting actuals against budget; vendor master updates and project-specific audits"],spec:["Graduate degree in Commerce; candidates who have completed CA Inter may also apply","4–5 years of relevant experience","Exposure to ERP systems across receivables, payables, payroll, revenue recognition and fixed assets","Proficiency in MS Office (Word, Excel, PowerPoint) is a must"],report:"Reports to the Lead – Finance at IIHS."},
+        ict:{about:"The Associate – ICT ensures the smooth, reliable functioning of the organisation's technology environment — day-to-day user support, system and network health, and secure, documented IT operations. Contractual position, initial term 11 months, renewable on mutual consent.",resp:["Installing and configuring hardware, software and peripherals; troubleshooting for end-users","Monitoring and maintaining systems and networks for uptime; backups, data recovery and security protocols","Hardware/software inventory, licensing compliance and patch management; logging and closing tickets per SLA","Wi-Fi, cabling and VLAN support; setting up projectors, VC equipment and webinars; on-call rotation"],spec:["Bachelor's degree in IT, Computer Science or a related field","2–4 years of experience in IT Support Services in any industry","Strong technical skills; ability to troubleshoot complex problems independently and in a team","Excellent communication, problem-solving and time-management skills"],report:"External Consultant coordinating with the Lead — ICT at IIHS."},
+        culinary:{about:"IIHS seeks a qualified culinary specialist, knowledgeable in bakery preparation, to support campus dining — nutritious meals and bakery products for students, faculty and staff with quality, hygiene and efficient kitchen operations. Contractual, 11 months, renewable.",resp:["Preparing and supervising daily food production for campus dining facilities","Producing breads, buns, cakes, pastries, cookies and desserts; monitoring bakery schedules","Menu planning for balanced nutrition; ensuring FSSAI food-safety, hygiene and sanitation compliance","Inventory and stock rotation (FIFO); procurement coordination; supervising kitchen staff; cost control"],spec:["Diploma or Degree in Hotel Management, Culinary Arts, or Bakery & Confectionery","3–5 years in institutional catering, hotels or large-scale food production","Practical knowledge of bakery production and bulk cooking; food-safety standards","Team supervision, production planning and time-management skills"],report:"External Consultant coordinating with the Manager — Administration at IIHS."},
+        hse:{about:"The Associate – HSE Operations supports implementation of Health, Safety and Environment systems at IIHS — statutory compliance, inspections, contractor safety, documentation, training and a safe campus. Either a regular position or an 11-month contractual engagement with potential to turn regular.",resp:["Maintaining HSE legal compliance records and statutory documentation","Routine safety inspections across construction areas, kitchens, hostels, offices and vendor zones","Risk assessments and corrective-action tracking; contractor safety and PPE monitoring","Toolbox talks, safety inductions, incident reporting, mock drills and periodic safety reports"],spec:["Diploma/Bachelor's in Technology/Engineering, or Science graduate with safety exposure; DGFASLI Diploma in Industrial Safety preferable","5–6 years of relevant HSE experience (construction preferred)","Knowledge of safety standards & compliance; strong documentation and reporting","English & Kannada preferred, Hindi for site-facing role; willing to work rotational shifts"],report:"Reports to the Manager – HSE Operations at IIHS."}
+      };
+      const TEMPLATES=[
+        {key:"finance",title:"Associate – Finance",fn:"Finance",loc:"Bengaluru (Sadashivanagar)",type:"Regular / Full-time",exp:"4–5 yrs"},
+        {key:"ict",title:"Associate – Information & Communication Technology (ICT)",fn:"ICT",loc:"Bengaluru (Sadashivanagar)",type:"Contract · 11 mo",exp:"2–4 yrs"},
+        {key:"culinary",title:"Culinary Specialist — Administration",fn:"Administration",loc:"Bengaluru (Kengeri)",type:"Contract · 11 mo",exp:"3–5 yrs"},
+        {key:"hse",title:"Associate – HSE Operations — Administration",fn:"Administration",loc:"Bengaluru (Kengeri)",type:"Regular / Contract",exp:"5–6 yrs"}
+      ];
+      const PREFIX={finance:"FIN",ict:"ICT",culinary:"CUL",hse:"HSE"};
+      // Real JD PDFs inside the sample-JDs folder (download links only — no new PDFs generated).
+      const PDF={
+        finance:"sample-JDs/Associate-–-Finance (1).pdf",
+        ict:"sample-JDs/Associate-–-Information-and-Communication-Technology.pdf",
+        culinary:"sample-JDs/Culinary-Specialist-—-Administration (1).pdf",
+        hse:"sample-JDs/Associate-–-Health-Safety-and-Environment-HSE-Operations-—-Administration- (1).pdf"
+      };
+      const pdfHref=key=>encodeURI(PDF[key]);
+      // Resolve the opening that was clicked on the board (?job=ID) back to one of the 4 real JDs.
+      const params=new URLSearchParams(location.search);
+      const jobId=parseInt(params.get('job')||'1',10);
+      const template=TEMPLATES[(jobId-1)%4];
+      const reqSeq=String(Math.floor((jobId-1)/4)+1).padStart(2,'0');
+      const primary={...template,req:`IIHS/2026/${PREFIX[template.key]}-${reqSeq}`};
+
+      // preferences = array of template keys, index 0 is primary/rank 1
+      let prefs=[primary.key];
+
+      const $=s=>document.querySelector(s);
+      function toast(t,s){$('#toastT').textContent=t;$('#toastS').textContent=s;const el=$('#toast');el.classList.add('show');clearTimeout(window._tt);window._tt=setTimeout(()=>el.classList.remove('show'),2600);}
+
+      function renderDetail(){
+        const d=REAL[primary.key];
+        $('#flowH1').textContent='Apply: '+primary.title;
+        $('#jdDetail').innerHTML=`<span class="pill hot">Live IIHS JD · ${primary.req}</span>
+          <h3>${primary.title}</h3>
+          <div class="meta"><span class="tag">${primary.fn}</span><span class="tag">${primary.loc}</span><span class="tag">${primary.type}</span><span class="tag">${primary.exp}</span></div>
+          <p style="margin:14px 0 0"><a class="btn secondary" href="${pdfHref(primary.key)}" download>↓ Download full JD (PDF)</a></p>
+          <h4>About the role</h4><p>${d.about}</p>
+          <h4>Activities &amp; tasks</h4><ul>${d.resp.map(r=>`<li>${r}</li>`).join('')}</ul>
+          <h4>Person specification</h4><ul>${d.spec.map(s=>`<li>${s}</li>`).join('')}</ul>
+          <h4>Structure &amp; reporting</h4><p>${d.report}</p>
+          <h4>To apply</h4><p>Click <b>Apply — set as preference 1</b>, then add up to two more roles below. Questions? Write to hr@iihs.co.in.</p>`;
+      }
+      function tmpl(key){return TEMPLATES.find(t=>t.key===key);}
+      function renderPrefMini(){
+        const el=$('#prefMini');
+        el.innerHTML=prefs.map((k,i)=>{const t=tmpl(k);return `<div class="srow"><span><strong>#${i+1}</strong> &nbsp;${t.title}</span>${i===0?'<span class="tag realtag">Primary</span>':`<a href="#" onclick="removePref('${k}');return false" style="color:var(--brand);font-size:12px">remove</a>`}</div>`;}).join('')
+          +`<div class="srow"><span>Slots used</span><strong>${prefs.length} / 3</strong></div>`;
+      }
+      function renderAdd(){
+        const el=$('#addGrid');
+        el.innerHTML=TEMPLATES.map(t=>{
+          const inList=prefs.includes(t.key);const isPrimary=prefs[0]===t.key;const rank=prefs.indexOf(t.key)+1;const d=REAL[t.key];
+          return `<article class="addjob ${inList?'in':''}">
+            <h3>${t.title}</h3>
+            <div class="meta" style="display:flex;gap:6px;flex-wrap:wrap"><span class="tag">${t.fn}</span><span class="tag">${t.loc}</span><span class="tag">${t.type}</span><span class="tag">${t.exp}</span></div>
+            <p>${d.about.split('. ')[0]}.</p>
+            <div class="arow">${inList?`<span class="tag realtag">Preference #${rank}</span>`:`<span></span>`}
+              ${isPrimary?'<span class="btn ghost">Primary</span>':inList?`<button class="btn secondary" onclick="removePref('${t.key}')">Remove</button>`:`<button class="btn primary" onclick="addPref('${t.key}')" ${prefs.length>=3?'disabled':''}>${prefs.length>=3?'3/3 full':'Add to application'}</button>`}
+            </div></article>`;
+        }).join('');
+        $('#selPill').textContent=prefs.length+' / 3 selected';
+      }
+      function renderRank(){
+        const el=$('#rankList');
+        el.innerHTML=prefs.map((k,i)=>{const t=tmpl(k);return `<article class="rank-row"><span class="rank">${i+1}</span>
+          <span><h3>${t.title}</h3><p>${t.fn} · ${t.loc} · ${i===0?'Set via Apply (primary)':'Added preference'}</p></span>
+          <span class="rank-ctrls">${i>0?`<button class="btn secondary" onclick="move(${i},-1)">▲ Up</button>`:'<span class="btn ghost">Primary</span>'}${i<prefs.length-1?`<button class="btn secondary" onclick="move(${i},1)">▼</button>`:''}</span></article>`;}).join('');
+      }
+      function renderApps(){
+        const labels=[['shortlisted','Shortlisted'],['progress','Under review'],['submitted','Submitted']];
+        $('#appCards').innerHTML=prefs.map((k,i)=>{const t=tmpl(k);const st=labels[i]||['submitted','Submitted'];return `<div class="appcard"><div><h4>Preference ${i+1} · ${t.title}</h4><p>${t.fn} · ${t.loc} · Application IIHS-2026-04821</p></div><span class="chip ${st[0]}">${st[1]}</span></div>`;}).join('');
+        $('#emailBody').innerHTML=`Dear Candidate, we have received your application for <b>${tmpl(prefs[0]).title}</b>${prefs.length>1?` and ${prefs.length-1} other preference${prefs.length>2?'s':''}`:''}. Your application ID is <b>IIHS-2026-04821</b>. We will be in touch about next steps.`;
+      }
+      function renderSummary(){
+        $('#sumPrimary').textContent=tmpl(prefs[0]).title.replace(/—.*/,'').replace(/\(.*\)/,'').trim();
+        $('#sumCount').textContent=prefs.length+' / 3';
+        $('#sumNext').textContent=prefs.length<3?'Add or confirm':'Confirm order';
+      }
+      function renderAll(){renderPrefMini();renderAdd();renderRank();renderApps();renderSummary();}
+
+      window.addPref=function(k){if(prefs.includes(k))return;if(prefs.length>=3){toast('Limit reached','Up to 3 preferences per application.');return;}prefs.push(k);renderAll();toast('Preference added',tmpl(k).title+' is now #'+prefs.length);};
+      window.removePref=function(k){if(prefs[0]===k)return;prefs=prefs.filter(x=>x!==k);renderAll();};
+      window.move=function(i,dir){const j=i+dir;if(j<1||j>=prefs.length)return;[prefs[i],prefs[j]]=[prefs[j],prefs[i]];renderRank();renderApps();renderPrefMini();};
+      $('#submitBtn').onclick=function(){toast('Application submitted','Confirmation sent to your verified email.');location.hash='#step5';};
+
+      // rail active-state on scroll
+      const railLinks=[...document.querySelectorAll('#rail a')];
+      const secs=['step1','step2','step3','step4','step5'].map(id=>document.getElementById(id));
+      const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){railLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id));}});},{rootMargin:'-45% 0px -50% 0px'});
+      secs.forEach(s=>obs.observe(s));
+
+      renderDetail();renderAll();
+      // If arriving via "View JD" we still show everything; "Apply" mode just scrolls to add step.
+      if(params.get('mode')==='apply'){setTimeout(()=>{location.hash='#step2';},60);}
+    </script>
+  </body>
+</html>

@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IIHS Careers · Design 1 · Candidate view (50 open positions)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      :root{--brand:#881803;--brand2:#de5a2a;--soft:#fef7f3;--ink:#0f172a;--text:#334155;--muted:#64748b;--line:#e2e8f0;--bg:#f8fafc;--card:#fff;--green:#047857;--amber:#b45309;--red:#b91c1c;--blue:#1d4ed8}
+      *{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#fff 0%,var(--bg) 42%,#fff 100%);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:0}a{text-decoration:none;color:inherit}.wrap{max-width:1360px;min-width:1180px;margin:0 auto;padding:24px 28px}.top{display:flex;justify-content:space-between;align-items:center;border:1px solid var(--line);background:#fffffff0;border-radius:12px;padding:14px 16px;box-shadow:0 18px 55px #0f172a12;position:sticky;top:16px;z-index:5}.brand{display:flex;align-items:center;gap:12px}.mark{display:grid;place-items:center;width:42px;height:42px;border-radius:10px;background:var(--brand);color:white;font-weight:900;font-size:12px}.brand strong{display:block}.brand span{display:block;color:var(--muted);font-size:12px;margin-top:2px}.nav{display:flex;gap:8px}.nav a,.pill{display:inline-flex;align-items:center;justify-content:center;height:34px;border-radius:999px;border:1px solid var(--line);background:white;padding:0 12px;font-size:12px;font-weight:800;color:var(--text)}.nav a.active,.pill.hot{background:var(--soft);border-color:#fbd5bf;color:var(--brand)}
+      .hero{display:grid;grid-template-columns:1fr 360px;gap:22px;align-items:end;padding:42px 0 26px}.eyebrow{color:var(--brand);font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.08em}h1{font-size:48px;line-height:1.02;margin:12px 0 0;max-width:850px}.hero p{font-size:16px;line-height:1.65;color:var(--text);max-width:780px}.summary{border:1px solid var(--line);border-radius:10px;background:white;padding:18px;box-shadow:0 18px 55px #0f172a12}.summary h2{font-size:18px;margin:0 0 12px}.summary div{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding:10px 0;color:var(--muted);font-size:13px}.summary div:last-child{border:0}.summary strong{color:var(--ink)}
+      .btn{display:inline-flex;align-items:center;justify-content:center;min-height:38px;border-radius:9px;border:1px solid transparent;padding:0 13px;font-size:13px;font-weight:900;cursor:pointer}.primary{background:var(--brand);color:white}.secondary{background:white;border-color:var(--line);color:var(--text)}.ghost{background:var(--soft);border-color:#fbd5bf;color:var(--brand)}
+      .tag{display:inline-flex;align-items:center;min-height:24px;border:1px solid var(--line);border-radius:999px;background:#f8fafc;color:var(--muted);padding:0 8px;font-size:11px;font-weight:800}.tag.realtag{background:#ecfdf5;border-color:#a7f3d0;color:#047857}.tag.amber{background:#fffbeb;border-color:#fde68a;color:#92400e}
+      body{background:linear-gradient(180deg,#ffffff 0%,#fafbfc 48%,#ffffff 100%)}
+      .top,.summary,.section{box-shadow:0 10px 30px rgba(15,23,42,.06)}
+      h1{font-size:44px;font-weight:650;letter-spacing:0}
+      .btn,.pill,.nav a,.tag,.eyebrow{font-weight:650}
+      .mark{font-weight:700}
+      .primary{box-shadow:none}
+      .browse-board{display:grid;grid-template-columns:300px 1fr;gap:16px;margin-top:8px;border:1px solid var(--line);border-radius:14px;background:white;box-shadow:0 10px 30px rgba(15,23,42,.06);overflow:hidden}.browse-filters{padding:18px;border-right:1px solid var(--line);background:#fbfcfd}.browse-filters h2{font-size:18px;line-height:1.15;margin:0 0 8px}.browse-filters p{margin:0 0 14px;color:var(--muted);font-size:13px;line-height:1.45}.browse-filters label{display:block;margin-top:14px;color:var(--muted);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em}.browse-filters input,.browse-filters select{width:100%;height:38px;margin-top:7px;border:1px solid var(--line);border-radius:9px;background:white;padding:0 10px;color:var(--text);font:13px var(--iihs-body-font)}.browse-results{padding:16px}.browse-results-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.browse-results-head h2{font-size:17px;margin:0}.browse-results-head span{color:var(--muted);font-size:12px}
+      .result-list{display:grid;gap:10px}.result-row{display:grid;grid-template-columns:1fr 116px 116px;gap:12px;align-items:center;border:1px solid var(--line);border-radius:10px;padding:14px;background:white}.result-row:hover{border-color:#f7b896;background:#fffaf8}.result-row h3{margin:0;font-size:15px;font-weight:650}.result-row h3:hover{color:var(--brand);cursor:pointer}.result-row .pri{margin:5px 0 0;color:var(--muted);font-size:12px}.result-meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}.jdlink{display:inline-block;margin-top:9px;color:var(--brand);font-size:12px;font-weight:650;border-bottom:1px dashed #fbd5bf}.jdlink:hover{border-bottom-style:solid}
+      .pager{display:flex;justify-content:space-between;align-items:center;padding:14px 2px 2px;color:var(--muted);font-size:12px}.pager .pages{display:flex;gap:6px}.pager .pages span{min-width:30px;height:30px;display:grid;place-items:center;border:1px solid var(--line);border-radius:7px;background:#fff;font-weight:800;cursor:pointer}.pager .pages span.on{background:var(--brand);color:#fff;border-color:var(--brand)}
+      .ctxbar{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:22px;border:1px solid #fbd5bf;border-radius:12px;background:var(--soft);padding:14px 18px}.ctxbar p{margin:0;color:#7c2d12;font-size:13px;line-height:1.5}.ctxbar b{color:var(--brand)}
+:root{--iihs-body-font:'Open Sans',Arial,sans-serif;--iihs-heading-font:'Montserrat','Open Sans',Arial,sans-serif}
+body,input,select,textarea,button,p,li,td,th,a,span,small,.btn,.pill,.tag,.eyebrow{font-family:var(--iihs-body-font)!important;font-weight:400!important;letter-spacing:0!important}
+h1,h2,h3,h4,h5,h6,.brand strong,.browse-filters h2,.browse-results-head h2{font-family:var(--iihs-heading-font)!important;font-weight:400!important;letter-spacing:0!important}
+strong,b,.mark,.tag{font-family:var(--iihs-body-font)!important;font-weight:600!important;letter-spacing:0!important}
+.nav a{font-family:var(--iihs-body-font)!important;font-weight:800!important;letter-spacing:1px!important}
+.btn.primary,.primary{font-weight:400!important}
+      .logo-img{display:block;width:54px;height:auto;max-height:42px;object-fit:contain;flex:0 0 auto}
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="top">
+        <a class="brand" href="#"><img class="logo-img" src="iihs-co-in-logo.jpg" alt="IIHS logo"><span><strong>IIHS Careers</strong><span>Design Set 1 · Page 1 of 2 · Open positions</span></span></a>
+        <nav class="nav"><a class="active" href="#">Open Jobs</a><a href="candidate-realdata-design-1-apply.html">Apply</a><a href="candidate-realdata-design-1-apply.html#step5">Dashboard</a></nav>
+        <span class="pill hot">Email + OTP verified</span>
+      </header>
+
+      <section class="hero">
+        <div><span class="eyebrow">Screen 1 · Public job board</span><h1>50 positions are open at IIHS right now.</h1><p>Browse and filter every announced role on this page. The application process — choosing preferences, ranking them, uploading your resume and filling the form — happens on the next page once you click <b>Apply Now</b>.</p></div>
+        <aside class="summary"><h2>This board at a glance</h2><div><span>Open positions</span><strong id="sumOpen">50</strong></div><div><span>Regular / full-time</span><strong id="sumReg">—</strong></div><div><span>Contract · 11 months</span><strong id="sumCon">—</strong></div><div><span>Closing this week</span><strong id="sumWk">—</strong></div></aside>
+      </section>
+
+      <section class="browse-board" aria-label="Browse open positions">
+        <aside class="browse-filters">
+          <h2>Filter open roles</h2>
+          <p>Narrow 50 positions by keyword, location, function or type, then open any role to apply.</p>
+          <label>Search</label>
+          <input id="q" placeholder="Finance, ICT, safety, bakery…" aria-label="Search roles">
+          <label>Location</label>
+          <select id="fLoc"><option value="">All locations</option></select>
+          <label>Function</label>
+          <select id="fFn"><option value="">All functions</option></select>
+          <label>Type</label>
+          <select id="fType"><option value="">All types</option></select>
+          <label>Sort by</label>
+          <select id="fSort"><option value="deadline">Closing soonest</option><option value="title">Role A–Z</option></select>
+          <button class="btn secondary" style="width:100%;margin-top:16px" onclick="resetFilters()">Clear filters</button>
+        </aside>
+        <div class="browse-results">
+          <div class="browse-results-head"><h2 id="resCount">50 open roles</h2><span>Sorted by closing date</span></div>
+          <div class="result-list" id="rows"></div>
+          <div class="pager"><span id="pageInfo">—</span><div class="pages" id="pages"></div></div>
+        </div>
+      </section>
+
+      <div class="ctxbar">
+        <p><b>Note for candidates:</b> IIHS has 4 distinct roles announced — Finance, ICT, Culinary Specialist and HSE Operations — listed across these 50 openings by requisition. You may carry up to <b>3 preferences</b> in a single application.</p>
+        <a class="btn primary" href="candidate-realdata-design-1-apply.html">Start an application →</a>
+      </div>
+    </div>
+
+    <script>
+      // ---- The 4 real IIHS JDs (only these are used, repeated across the 50 openings) ----
+      const TEMPLATES=[
+        {key:"finance",title:"Associate – Finance",fn:"Finance",loc:"Bengaluru (Sadashivanagar)",type:"Regular / Full-time",exp:"4–5 yrs",desc:"Cost-centre accounting, receivables & payables, payroll, statutory audits and budget reporting for IIHS operations."},
+        {key:"ict",title:"Associate – Information & Communication Technology (ICT)",fn:"ICT",loc:"Bengaluru (Sadashivanagar)",type:"Contract · 11 mo",exp:"2–4 yrs",desc:"Frontline IT support: installs, troubleshooting, network and system health, security and documentation."},
+        {key:"culinary",title:"Culinary Specialist — Administration",fn:"Administration",loc:"Bengaluru (Kengeri)",type:"Contract · 11 mo",exp:"3–5 yrs",desc:"Bakery and bulk food production for campus dining with FSSAI hygiene, menu planning and inventory control."},
+        {key:"hse",title:"Associate – HSE Operations — Administration",fn:"Administration",loc:"Bengaluru (Kengeri)",type:"Regular / Contract",exp:"5–6 yrs",desc:"Health, Safety & Environment compliance, inspections, contractor safety and training across the campus."}
+      ];
+      const PREFIX={finance:"FIN",ict:"ICT",culinary:"CUL",hse:"HSE"};
+      // Real JD PDFs that live in the sample-JDs folder (download links point here, no new files generated).
+      const PDF={
+        finance:"sample-JDs/Associate-–-Finance (1).pdf",
+        ict:"sample-JDs/Associate-–-Information-and-Communication-Technology.pdf",
+        culinary:"sample-JDs/Culinary-Specialist-—-Administration (1).pdf",
+        hse:"sample-JDs/Associate-–-Health-Safety-and-Environment-HSE-Operations-—-Administration- (1).pdf"
+      };
+      const pdfHref=key=>encodeURI(PDF[key]);
+      // Spread of closing dates across Jun–Aug 2026 so 50 openings read like a live board.
+      const MONTHS=[["Jun",6],["Jul",7],["Aug",8]];
+      function makeDeadline(i){const day=((i*7+12)%27)+1;const m=MONTHS[i%3];return {label:String(day).padStart(2,'0')+" "+m[0],sort:m[1]*100+day};}
+      // Build 50 openings by cycling ONLY the 4 real JDs.
+      const JOBS=[];
+      for(let i=0;i<50;i++){
+        const t=TEMPLATES[i%4];
+        const seq=String(Math.floor(i/4)+1).padStart(2,'0');
+        const d=makeDeadline(i);
+        JOBS.push({...t,id:i+1,req:`IIHS/2026/${PREFIX[t.key]}-${seq}`,deadline:d.label,dsort:d.sort});
+      }
+
+      // ---- Populate filter options ----
+      const locs=[...new Set(JOBS.map(j=>j.loc))].sort();
+      const fns=[...new Set(JOBS.map(j=>j.fn))].sort();
+      const types=[...new Set(JOBS.map(j=>j.type))].sort();
+      const fillSel=(id,arr)=>{const s=document.getElementById(id);arr.forEach(v=>{const o=document.createElement('option');o.value=v;o.textContent=v;s.appendChild(o);});};
+      fillSel('fLoc',locs); fillSel('fFn',fns); fillSel('fType',types);
+
+      // ---- Summary counts ----
+      document.getElementById('sumReg').textContent=JOBS.filter(j=>j.type.includes('Regular')||j.type.includes('Full')).length;
+      document.getElementById('sumCon').textContent=JOBS.filter(j=>j.type.startsWith('Contract')).length;
+      document.getElementById('sumWk').textContent=JOBS.filter(j=>j.dsort<=618).length;
+
+      const PER=8; let page=1;
+      function filtered(){
+        const q=(document.getElementById('q').value||'').toLowerCase();
+        const loc=document.getElementById('fLoc').value,fn=document.getElementById('fFn').value,type=document.getElementById('fType').value,sort=document.getElementById('fSort').value;
+        let list=JOBS.filter(j=>(!loc||j.loc===loc)&&(!fn||j.fn===fn)&&(!type||j.type===type)&&(!q||(j.title+' '+j.fn+' '+j.desc).toLowerCase().includes(q)));
+        list.sort((a,b)=>sort==='title'?a.title.localeCompare(b.title):a.dsort-b.dsort);
+        return list;
+      }
+      function render(){
+        const list=filtered();
+        const np=Math.max(1,Math.ceil(list.length/PER));
+        if(page>np)page=1;
+        const slice=list.slice((page-1)*PER,page*PER);
+        const rows=document.getElementById('rows');
+        rows.innerHTML=slice.map(j=>{
+          const url=`candidate-realdata-design-1-apply.html?job=${j.id}`;
+          return `<article class="result-row">
+            <span><h3 onclick="location.href='${url}'">${j.title}</h3>
+              <p class="pri">${j.req} · ${j.fn} · ${j.loc}</p>
+              <span class="result-meta"><span class="tag">${j.type}</span><span class="tag">${j.exp}</span><span class="tag amber">Closes ${j.deadline}</span><span class="tag realtag">Live IIHS JD ✓</span></span>
+              <a class="jdlink" href="${pdfHref(j.key)}" download>↓ Download JD (PDF)</a>
+            </span>
+            <a class="btn primary" href="${url}&mode=apply">Apply Now</a>
+            <a class="btn secondary" href="${url}&mode=view">View JD</a>
+          </article>`;
+        }).join('');
+        document.getElementById('resCount').textContent=`${list.length} open role${list.length===1?'':'s'}`;
+        const from=list.length?(page-1)*PER+1:0, to=Math.min(page*PER,list.length);
+        document.getElementById('pageInfo').textContent=`Showing ${from}–${to} of ${list.length}`;
+        const pages=document.getElementById('pages');pages.innerHTML='';
+        for(let i=1;i<=np;i++){const s=document.createElement('span');s.textContent=i;if(i===page)s.className='on';s.onclick=()=>{page=i;render();window.scrollTo({top:document.querySelector('.browse-board').offsetTop-20,behavior:'smooth'});};pages.appendChild(s);}
+      }
+      function resetFilters(){['q','fLoc','fFn','fType'].forEach(id=>document.getElementById(id).value='');document.getElementById('fSort').value='deadline';page=1;render();}
+      window.resetFilters=resetFilters;
+      ['q','fLoc','fFn','fType','fSort'].forEach(id=>document.getElementById(id).addEventListener('input',()=>{page=1;render();}));
+      render();
+    </script>
+  </body>
+</html>
